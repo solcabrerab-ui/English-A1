@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My English Journey — A1 Present Simple Workbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#FEFCFA;--white:#FFFFFF;
+  --lila:#C9B8E8;--lila-pale:#F2EEFB;--lila-deep:#7B5EA7;--lila-dark:#4A3475;
+  --pink:#F0A8C4;--pink-pale:#FEF0F6;--pink-deep:#C2587F;--pink-dark:#8A2E50;
+  --yellow:#FADA85;--yellow-pale:#FFFAEB;--yellow-dark:#7A5500;--yellow-mid:#F5C430;
+  --orange:#FFAD7A;--orange-pale:#FFF3EB;--orange-dark:#9C4418;--orange-mid:#F07830;
+  --gray:#9E9BAD;--gray-pale:#F5F4F8;--gray-dark:#4A4660;--gray-mid:#6B6585;
+  --text:#2D2840;--text-mid:#6B6585;--border:#E8E2F2;--border-mid:#D4CDE8;
+  --success:#5BAD7F;--success-pale:#EAF8F0;--error:#E0556A;--error-pale:#FEF0F2;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;}
+
+/* STICKY HEADER */
+.sticky-header{position:sticky;top:0;z-index:100;background:rgba(254,252,250,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:10px 24px;display:flex;align-items:center;gap:16px;}
+.header-logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--lila-deep);white-space:nowrap;}
+.progress-wrap{flex:1;}
+.progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--gray-mid);margin-bottom:4px;}
+.progress-bar{height:7px;background:var(--lila-pale);border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--lila-deep),var(--pink-deep));border-radius:10px;transition:width .5s ease;width:0%;}
+.header-score{font-size:13px;font-weight:600;color:var(--lila-deep);white-space:nowrap;}
+
+/* LAYOUT */
+.container{max-width:820px;margin:0 auto;padding:32px 24px 80px;}
+
+/* COVER */
+.cover{background:linear-gradient(140deg,#F2EEFB 0%,#FEF0F6 45%,#FFFAEB 80%,#FFF3EB 100%);border-radius:28px;padding:56px 44px;text-align:center;margin-bottom:40px;position:relative;overflow:hidden;border:1px solid var(--border);}
+.cover::before{content:'🌸';position:absolute;top:18px;left:24px;font-size:40px;opacity:.15;transform:rotate(-20deg);}
+.cover::after{content:'✦';position:absolute;bottom:22px;right:28px;font-size:38px;opacity:.12;transform:rotate(15deg);}
+.cover-badge{display:inline-block;background:var(--lila);color:var(--lila-dark);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:5px 18px;border-radius:30px;margin-bottom:22px;}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,62px);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:10px;}
+.cover h1 em{color:var(--lila-deep);font-style:italic;}
+.cover-sub{font-size:15px;color:var(--text-mid);font-weight:300;max-width:460px;margin:0 auto 26px;}
+.cover-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px;}
+.pill{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:500;}
+.pill-lila{background:var(--lila-pale);color:var(--lila-dark);}
+.pill-pink{background:var(--pink-pale);color:var(--pink-dark);}
+.pill-orange{background:var(--orange-pale);color:var(--orange-dark);}
+.pill-yellow{background:var(--yellow-pale);color:var(--yellow-dark);}
+.name-box{display:inline-block;background:rgba(255,255,255,.8);border:1.5px solid var(--border-mid);border-radius:18px;padding:16px 28px;}
+.name-box label{font-size:11px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px;}
+.name-box input{border:none;border-bottom:2px solid var(--lila);background:transparent;font-size:16px;font-family:'DM Sans',sans-serif;color:var(--text);padding:2px 0;outline:none;width:220px;text-align:center;}
+
+/* UNIT HEADERS */
+.unit-header{border-radius:24px;padding:36px 36px 28px;margin-bottom:28px;position:relative;overflow:hidden;}
+.u1{background:linear-gradient(135deg,#F2EEFB 0%,#FEF0F6 100%);border:1px solid var(--lila);}
+.u2{background:linear-gradient(135deg,#FFF3EB 0%,#FFFAEB 100%);border:1px solid var(--orange);}
+.u3{background:linear-gradient(135deg,#FEF0F6 0%,#F2EEFB 100%);border:1px solid var(--pink);}
+.u4{background:linear-gradient(135deg,#FFFAEB 0%,#FFF3EB 100%);border:1px solid var(--yellow-mid);}
+.u5{background:linear-gradient(135deg,#F5F4F8 0%,#F2EEFB 100%);border:1px solid var(--lila);}
+.unit-header::after{position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;pointer-events:none;}
+.u1::after{content:'💜';}.u2::after{content:'🧡';}.u3::after{content:'🚫';}.u4::after{content:'❓';}.u5::after{content:'✨';}
+.unit-tag{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px;}
+.u1 .unit-tag{color:var(--lila-deep);}
+.u2 .unit-tag{color:var(--orange-dark);}
+.u3 .unit-tag{color:var(--pink-deep);}
+.u4 .unit-tag{color:var(--yellow-dark);}
+.u5 .unit-tag{color:var(--lila-deep);}
+.unit-header h2{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;}
+.unit-header p{font-size:14px;color:var(--text-mid);max-width:500px;}
+.unit-meta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+.unit-meta span{background:rgba(255,255,255,.7);border-radius:20px;padding:4px 14px;font-size:12px;border:1px solid var(--border);}
+
+/* SECTION LABEL */
+.sec-label{display:flex;align-items:center;gap:12px;margin:32px 0 14px;}
+.sec-icon{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.si-lila{background:var(--lila-pale);} .si-pink{background:var(--pink-pale);} .si-yellow{background:var(--yellow-pale);} .si-orange{background:var(--orange-pale);} .si-gray{background:var(--gray-pale);}
+.sec-label-text span{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);display:block;}
+.sec-label-text h3{font-size:17px;font-weight:600;color:var(--text);margin:0;}
+
+/* CALLOUTS */
+.callout{display:flex;gap:14px;align-items:flex-start;border-radius:16px;padding:15px 18px;margin-bottom:18px;}
+.callout-emoji{font-size:20px;flex-shrink:0;margin-top:1px;}
+.callout-lila{background:var(--lila-pale);border:1px solid rgba(201,184,232,.5);}
+.callout-pink{background:var(--pink-pale);border:1px solid rgba(240,168,196,.5);}
+.callout-yellow{background:var(--yellow-pale);border:1px solid rgba(250,218,133,.5);}
+.callout-orange{background:var(--orange-pale);border:1px solid rgba(255,173,122,.5);}
+.callout strong{font-size:13px;display:block;margin-bottom:3px;color:var(--text);}
+.callout p{font-size:13.5px;color:var(--text);line-height:1.6;margin:0;}
+
+/* GRAMMAR BOX */
+.grammar-box{background:var(--gray-dark);color:white;border-radius:20px;padding:24px;margin-bottom:20px;}
+.grammar-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--yellow);display:block;margin-bottom:14px;}
+.grammar-box h4{color:white;font-size:15px;margin-bottom:12px;}
+.grammar-rule{background:rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin-bottom:10px;border:1px solid rgba(255,255,255,.1);}
+.grammar-rule:last-child{margin-bottom:0;}
+.grammar-rule .rule-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--lila);margin-bottom:6px;display:block;}
+.grammar-rule .rule-text{font-size:14px;line-height:1.7;}
+.grammar-rule .rule-text em{color:var(--yellow);font-style:normal;font-weight:600;}
+.grammar-rule .rule-text s{color:var(--error);opacity:.8;}
+.grammar-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+.grammar-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;}
+
+/* BIG FORMULA */
+.formula{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);border-radius:16px;padding:18px 20px;margin:14px 0;text-align:center;font-size:17px;font-weight:600;letter-spacing:.5px;}
+.formula em{color:var(--yellow);font-style:normal;}
+.formula span{color:var(--pink);font-size:13px;display:block;margin-top:4px;font-weight:400;opacity:.8;}
+
+/* CONJUGATION TABLE */
+.conj-table{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden;margin-bottom:18px;border:1px solid var(--border);}
+.conj-table th{background:var(--lila-deep);color:white;padding:10px 14px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-align:left;}
+.conj-table td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:14px;background:var(--white);}
+.conj-table tr:last-child td{border-bottom:none;}
+.conj-table tr:nth-child(even) td{background:var(--lila-pale);}
+.conj-table .subject{font-weight:600;color:var(--lila-deep);}
+.conj-table .verb{font-weight:600;color:var(--text);}
+.conj-table .example{color:var(--text-mid);font-size:13px;font-style:italic;}
+.conj-highlight{background:var(--orange-pale)!important;border-left:3px solid var(--orange-mid);}
+.conj-table .rule-note{font-size:11.5px;color:var(--orange-dark);font-weight:600;font-style:normal;}
+
+/* EXERCISE CARD */
+.exercise{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:24px;margin-bottom:18px;}
+.exercise-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.ex-num{width:30px;height:30px;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.ex-num.lila{background:var(--lila-deep);}
+.ex-num.orange{background:var(--orange-mid);}
+.ex-num.pink{background:var(--pink-deep);}
+.ex-num.yellow{background:var(--yellow-dark);}
+.ex-num.gray{background:var(--gray-dark);}
+.ex-type{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.exercise-header h4{font-size:15px;font-weight:600;color:var(--text);margin:0;}
+
+/* FILL IN THE BLANK */
+.blank-sentence{font-size:15px;line-height:3;margin-bottom:4px;display:block;}
+.blank{display:inline-block;border:none;border-bottom:2.5px solid var(--lila);background:var(--lila-pale);padding:2px 10px;min-width:90px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;border-radius:4px 4px 0 0;transition:.2s;text-align:center;}
+.blank:focus{border-bottom-color:var(--lila-deep);}
+.blank.correct{border-bottom-color:var(--success);background:var(--success-pale);color:var(--success);}
+.blank.wrong{border-bottom-color:var(--error);background:var(--error-pale);color:var(--error);}
+.blank.pink{border-bottom-color:var(--pink);background:var(--pink-pale);}
+.blank.pink:focus{border-bottom-color:var(--pink-deep);}
+.blank.orange{border-bottom-color:var(--orange);background:var(--orange-pale);}
+.blank.orange:focus{border-bottom-color:var(--orange-dark);}
+.blank.yellow{border-bottom-color:var(--yellow-mid);background:var(--yellow-pale);}
+.blank.yellow:focus{border-bottom-color:var(--yellow-dark);}
+
+/* BUTTONS */
+.btn{border:none;border-radius:12px;padding:10px 22px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;gap:6px;}
+.btn-lila{background:var(--lila-pale);color:var(--lila-dark);border:1.5px solid var(--lila);}
+.btn-lila:hover{background:var(--lila);color:var(--lila-dark);}
+.btn-check{background:var(--lila-deep);color:white;}
+.btn-check:hover{background:var(--lila-dark);}
+.btn-show{background:var(--gray-pale);color:var(--gray-dark);border:1.5px solid var(--border);}
+.btn-show:hover{background:var(--border);}
+.btn-reset{background:transparent;color:var(--gray);border:1.5px dashed var(--border);font-size:12px;padding:7px 14px;}
+.btn-reset:hover{border-color:var(--gray);}
+.btn-orange{background:var(--orange-pale);color:var(--orange-dark);border:1.5px solid var(--orange);}
+.btn-orange:hover{background:var(--orange);}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center;}
+
+/* ANSWER REVEAL */
+.answer-reveal{display:none;margin-top:14px;background:var(--success-pale);border:1.5px solid var(--success);border-radius:14px;padding:14px 16px;}
+.answer-reveal.show{display:block;}
+.ar-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--success);margin-bottom:8px;display:block;}
+.answer-reveal li{font-size:14px;color:var(--text);margin-bottom:4px;list-style:none;display:flex;gap:8px;align-items:flex-start;}
+.answer-reveal li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0;}
+
+/* RESULT BANNER */
+.result-banner{display:none;border-radius:12px;padding:12px 16px;margin-top:12px;font-size:13.5px;font-weight:500;}
+.result-banner.show{display:block;}
+.result-good{background:var(--success-pale);color:var(--success);border:1px solid var(--success);}
+.result-bad{background:var(--error-pale);color:var(--error);border:1px solid var(--error);}
+.result-ok{background:var(--yellow-pale);color:var(--yellow-dark);border:1px solid var(--yellow-mid);}
+
+/* MULTIPLE CHOICE */
+.mc-q{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.5;}
+.mc-option{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1.5px solid var(--border);border-radius:14px;margin-bottom:8px;cursor:pointer;transition:.15s;font-size:14px;}
+.mc-option:hover{border-color:var(--lila);background:var(--lila-pale);}
+.mc-option.selected{border-color:var(--lila-deep);background:var(--lila-pale);}
+.mc-option.correct-ans{border-color:var(--success);background:var(--success-pale);}
+.mc-option.wrong-ans{border-color:var(--error);background:var(--error-pale);}
+.mc-letter{width:28px;height:28px;border:1.5px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;transition:.15s;}
+.mc-option.selected .mc-letter{background:var(--lila-deep);border-color:var(--lila-deep);color:white;}
+.mc-option.correct-ans .mc-letter{background:var(--success);border-color:var(--success);color:white;}
+.mc-option.wrong-ans .mc-letter{background:var(--error);border-color:var(--error);color:white;}
+.mc-sep{height:1px;background:var(--border);margin:16px 0;}
+
+/* TRUE/FALSE */
+.tf-item{display:flex;gap:14px;align-items:center;padding:14px;border:1.5px solid var(--border);border-radius:14px;margin-bottom:10px;}
+.tf-text{flex:1;font-size:14px;line-height:1.5;}
+.tf-btns{display:flex;gap:8px;flex-shrink:0;}
+.tf-btn{padding:6px 16px;border-radius:10px;border:1.5px solid var(--border);background:var(--gray-pale);font-size:12px;font-weight:600;cursor:pointer;transition:.15s;font-family:'DM Sans',sans-serif;}
+.tf-btn:hover{border-color:var(--lila);}
+.tf-btn.correct{background:var(--success-pale);border-color:var(--success);color:var(--success);}
+.tf-btn.wrong{background:var(--error-pale);border-color:var(--error);color:var(--error);}
+
+/* MATCHING */
+.match-container{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.match-col h5{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:10px;}
+.match-item{padding:11px 14px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;cursor:pointer;transition:.15s;user-select:none;background:var(--white);line-height:1.4;}
+.match-item:hover{border-color:var(--pink);}
+.match-item.selected{border-color:var(--lila-deep);background:var(--lila-pale);}
+.match-item.matched{border-color:var(--success);background:var(--success-pale);cursor:default;}
+.match-item.wrong-match{border-color:var(--error);background:var(--error-pale);}
+
+/* REORDER */
+.reorder-words{display:flex;flex-wrap:wrap;gap:8px;min-height:48px;background:var(--lila-pale);border-radius:14px;padding:12px;margin-bottom:10px;border:2px dashed var(--border);}
+.reorder-result{display:flex;flex-wrap:wrap;gap:8px;min-height:52px;background:var(--white);border:2px solid var(--border);border-radius:14px;padding:12px;margin-bottom:10px;}
+.word-tile{padding:7px 14px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;transition:.15s;border:1.5px solid;}
+.tile-source{background:var(--white);border-color:var(--lila);color:var(--lila-dark);}
+.tile-source:hover{background:var(--lila-pale);}
+.tile-placed{background:var(--lila-pale);border-color:var(--lila-deep);color:var(--lila-dark);}
+.tile-placed:hover{background:var(--lila);}
+.reorder-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;display:block;}
+
+/* WORD BANK */
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px;background:var(--lila-pale);border:1.5px solid var(--lila);border-radius:14px;margin-bottom:16px;}
+.wb-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--lila-dark);width:100%;margin-bottom:4px;}
+.word-chip{padding:6px 14px;background:var(--white);border:1.5px solid var(--lila);border-radius:20px;font-size:13px;font-weight:500;color:var(--lila-dark);cursor:pointer;transition:.15s;}
+.word-chip:hover{background:var(--lila);border-color:var(--lila-deep);}
+
+/* WRITING BOX */
+.writing-box{width:100%;min-height:100px;border:2px solid var(--border);border-radius:16px;padding:14px 16px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;resize:vertical;background:var(--bg);transition:.2s;line-height:1.65;}
+.writing-box:focus{border-color:var(--lila-deep);background:var(--white);}
+.writing-box.tall{min-height:140px;}
+.char-count{font-size:11px;color:var(--gray);margin-top:6px;text-align:right;}
+
+/* CHECKBOX ACTIVITY */
+.check-q{background:var(--gray-dark);color:white;border-radius:14px;padding:13px 16px;margin-bottom:10px;font-size:15px;font-weight:500;}
+.check-opts{margin-bottom:20px;}
+.check-opt{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border:1.5px solid var(--border);border-radius:12px;margin-bottom:7px;cursor:pointer;transition:.15s;font-size:14px;background:var(--white);}
+.check-opt:hover{border-color:var(--lila);background:var(--lila-pale);}
+.check-opt.selected{border-color:var(--lila-deep);background:var(--lila-pale);}
+.check-box{width:20px;height:20px;border-radius:6px;border:2px solid var(--border);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.15s;font-size:12px;font-weight:700;}
+.check-opt.selected .check-box{background:var(--lila-deep);border-color:var(--lila-deep);color:white;}
+
+/* VOCAB CARDS */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px;margin-bottom:18px;}
+.vocab-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:15px;cursor:pointer;transition:.18s;text-align:center;min-height:90px;display:flex;flex-direction:column;justify-content:center;}
+.vocab-card:hover{border-color:var(--orange);transform:translateY(-2px);}
+.vocab-card.flipped{background:var(--orange-pale);border-color:var(--orange);}
+.vocab-front .vword{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.vocab-front .vpron{font-family:'Caveat',cursive;font-size:16px;color:var(--orange-mid);}
+.vocab-front .vhint{font-size:11px;color:var(--gray);margin-top:6px;}
+.vocab-back{display:none;}
+.vocab-card.flipped .vocab-front{display:none;}
+.vocab-card.flipped .vocab-back{display:block;}
+.vocab-back .vtranslate{font-size:15px;font-weight:600;color:var(--orange-dark);margin-bottom:4px;}
+.vocab-back .vexample{font-size:12px;color:var(--text-mid);font-style:italic;line-height:1.4;}
+
+/* SPEAKING CARDS */
+.speaking-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
+.speaking-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:16px;transition:.15s;}
+.speaking-card:hover{border-color:var(--pink);}
+.sc-num{font-family:'Caveat',cursive;font-size:22px;color:var(--pink);margin-bottom:6px;}
+.speaking-card p{font-size:14px;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.my-answer{width:100%;border:none;border-bottom:1.5px solid var(--border);background:transparent;font-size:13.5px;font-family:'DM Sans',sans-serif;color:var(--text);padding:4px 0;outline:none;transition:.2s;}
+.my-answer:focus{border-bottom-color:var(--pink-deep);}
+.my-answer::placeholder{color:var(--border);}
+
+/* ERROR CORRECTION */
+.error-box{background:var(--error-pale);border:1.5px solid var(--error);border-radius:14px;padding:14px 18px;font-size:15px;margin-bottom:10px;line-height:1.7;}
+.error-box .err{color:var(--error);text-decoration:line-through;font-weight:600;}
+.correction-input{width:100%;border:none;border-bottom:2.5px solid var(--lila);background:var(--lila-pale);padding:8px 12px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;border-radius:4px 4px 0 0;margin-bottom:12px;transition:.2s;}
+.correction-input:focus{border-bottom-color:var(--lila-deep);}
+
+/* UNIT DIVIDER */
+.unit-divider{display:flex;align-items:center;gap:16px;margin:44px 0 32px;}
+.unit-divider::before,.unit-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.unit-divider span{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);white-space:nowrap;}
+
+/* REFLECTION */
+.reflect-box{background:linear-gradient(135deg,var(--lila-deep) 0%,#9B6DC5 100%);border-radius:22px;padding:28px;margin-bottom:20px;color:white;}
+.reflect-box h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px;}
+.reflect-rs{font-size:13px;opacity:.65;margin-bottom:20px;}
+.reflect-item{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;transition:.15s;}
+.reflect-item:hover{background:rgba(255,255,255,.2);}
+.reflect-write{width:100%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:14px;padding:14px;margin-top:16px;min-height:80px;font-size:14px;font-family:'DM Sans',sans-serif;color:white;outline:none;resize:none;}
+.reflect-write::placeholder{color:rgba(255,255,255,.35);}
+
+/* SCORE */
+.score-card{background:var(--lila-pale);border:1.5px solid var(--lila);border-radius:20px;padding:22px;margin:32px 0;text-align:center;}
+.score-card h3{font-family:'Playfair Display',serif;color:var(--lila-deep);font-size:20px;margin-bottom:4px;}
+.score-card p{font-size:13.5px;color:var(--text-mid);margin-bottom:16px;}
+.score-display{font-size:46px;font-weight:700;color:var(--lila-deep);font-family:'Playfair Display',serif;}
+.score-display span{font-size:18px;color:var(--gray);}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;margin-bottom:18px;}
+.ref-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);}
+.ref-table th{background:var(--gray-dark);color:white;padding:10px 14px;font-size:11.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-align:left;}
+.ref-table td{padding:11px 14px;border-bottom:1px solid var(--border);font-size:14px;}
+.ref-table tr:last-child td{border-bottom:none;}
+.ref-table tr:nth-child(even) td{background:var(--gray-pale);}
+.ref-table .rword{font-weight:600;color:var(--lila-deep);}
+.ref-table .rpron{font-family:'Caveat',cursive;color:var(--orange-mid);font-size:16px;}
+
+/* TIP STRIP */
+.tip-strip{background:var(--lila-dark);color:white;border-radius:14px;padding:13px 17px;margin-bottom:14px;display:flex;gap:10px;font-size:13.5px;align-items:flex-start;}
+.tip-strip strong{display:block;margin-bottom:2px;}
+
+.section-sep{height:1px;background:var(--border);margin:20px 0;}
+
+@media(max-width:600px){
+  .grammar-grid,.grammar-grid3,.match-container,.speaking-grid{grid-template-columns:1fr;}
+  .container{padding:20px 16px 60px;}
+  .cover{padding:40px 22px;}
+  .unit-header{padding:28px 22px 22px;}
+}
+
+.grammar-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;}
+@media(max-width:600px){.grammar-grid3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header">
+  <div class="header-logo">My English Journey 💜</div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Your progress</span><span id="progressText">0% complete</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+  <div class="header-score">⭐ <span id="scoreDisplay">0</span> pts</div>
+</div>
+
+<div class="container">
+
+<!-- COVER -->
+<div class="cover">
+  <span class="cover-badge">✦ A1 English Workbook ✦</span>
+  <h1>Present Simple<br><em>Mastery</em> 🌸</h1>
+  <p class="cover-sub">A complete, interactive guide to the Present Simple — the most important tense in English. Learn everything: affirmative, negative, questions, and time expressions.</p>
+  <div class="cover-pills">
+    <span class="pill pill-lila">📚 Level A1</span>
+    <span class="pill pill-pink">✏️ Fully Interactive</span>
+    <span class="pill pill-orange">🧠 15 Units</span>
+    <span class="pill pill-yellow">⭐ Track Progress</span>
+  </div>
+  <div class="name-box">
+    <label>This workbook belongs to</label>
+    <input type="text" placeholder="Your name here..." oninput="trackProgress()">
+  </div>
+</div>
+
+<!-- INTRO CALLOUT -->
+<div class="callout callout-lila">
+  <span class="callout-emoji">💡</span>
+  <div><strong>Why is the Present Simple so important?</strong><p>We use it every single day to talk about habits, routines, facts, and things that are always true. "I <em>drink</em> coffee every morning." "She <em>works</em> in a hospital." "The sun <em>rises</em> in the east." Master this tense and you can already say SO much in English!</p></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 1 — THE VERB BE
+══════════════════════════════════════ -->
+<div class="unit-header u1">
+  <span class="unit-tag">✦ Unit One ✦</span>
+  <h2>The Verb BE 💜</h2>
+  <p>Before anything else, we need to master the most important verb in English: "to be." It's irregular, so it needs special attention!</p>
+  <div class="unit-meta"><span>⏱ 30–40 min</span><span>📌 am / is / are</span><span>🎯 Describe yourself & others</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — The Verb BE</span>
+  <h4>Full conjugation — memorise these!</h4>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">Affirmative (+)</span>
+      <div class="rule-text">
+        I <em>am</em> / I<em>'m</em><br>
+        You <em>are</em> / You<em>'re</em><br>
+        He / She / It <em>is</em> / He<em>'s</em> / She<em>'s</em><br>
+        We / They <em>are</em> / We<em>'re</em>
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Negative (−)</span>
+      <div class="rule-text">
+        I <em>am not</em> / I<em>'m not</em><br>
+        You <em>are not</em> / You<em> aren't</em><br>
+        He / She <em>is not</em> / She<em> isn't</em><br>
+        We / They <em>are not</em> / They<em> aren't</em>
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Questions (?)</span>
+      <div class="rule-text">
+        <em>Am</em> I late?<br>
+        <em>Are</em> you a student?<br>
+        <em>Is</em> he from Spain?<br>
+        <em>Are</em> they married?
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Short Answers</span>
+      <div class="rule-text">
+        Yes, I <em>am</em>. / No, I<em>'m not</em>.<br>
+        Yes, she <em>is</em>. / No, she <em>isn't</em>.<br>
+        Yes, they <em>are</em>. / No, they <em>aren't</em>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VOCAB: ADJECTIVES FOR BE -->
+<div class="sec-label">
+  <div class="sec-icon si-orange">📚</div>
+  <div class="sec-label-text"><span>Vocabulary</span><h3>Adjectives — click to flip and learn!</h3></div>
+</div>
+<div class="vocab-grid">
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">happy</div><div class="vpron">hápi</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">feliz / contenta</div><div class="vexample">"I'm happy today!"</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">tired</div><div class="vpron">táierd</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">cansada</div><div class="vexample">"She's very tired."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">hungry</div><div class="vpron">hángri</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">hambrienta</div><div class="vexample">"I'm hungry — let's eat!"</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">married</div><div class="vpron">márrid</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">casada</div><div class="vexample">"They are married."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">busy</div><div class="vpron">bísi</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">ocupada</div><div class="vexample">"I'm busy right now."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">cold / hot</div><div class="vpron">kold / hot</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">frío / calor</div><div class="vexample">"It's cold today."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">right / wrong</div><div class="vpron">rait / rong</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">correcto / incorrecto</div><div class="vexample">"You're right!"</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">late / early</div><div class="vpron">leit / érli</div><div class="vhint">Click to flip!</div></div><div class="vocab-back"><div class="vtranslate">tarde / temprano</div><div class="vexample">"He is never late."</div></div></div>
+</div>
+
+<!-- EX 1: FILL VERB BE -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">1</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with am, is, or are.</h4></div></div>
+  <div class="word-bank"><span class="wb-label">Word bank:</span><span class="word-chip">am</span><span class="word-chip">is</span><span class="word-chip">are</span></div>
+  <label class="blank-sentence">1. I <input class="blank" id="b1a" data-answer="am" placeholder="..."> a student.</label>
+  <label class="blank-sentence">2. She <input class="blank" id="b1b" data-answer="is" placeholder="..."> from Italy.</label>
+  <label class="blank-sentence">3. They <input class="blank" id="b1c" data-answer="are" placeholder="..."> my best friends.</label>
+  <label class="blank-sentence">4. He <input class="blank" id="b1d" data-answer="is" placeholder="..."> a doctor.</label>
+  <label class="blank-sentence">5. We <input class="blank" id="b1e" data-answer="are" placeholder="..."> very happy today!</label>
+  <label class="blank-sentence">6. It <input class="blank" id="b1f" data-answer="is" placeholder="..."> a beautiful day.</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('b1',['am','is','are','is','are','is'],6,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans1')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('b1',6)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans1"><span class="ar-label">Answers</span><li>am</li><li>is</li><li>are</li><li>is</li><li>are</li><li>is</li></div>
+  <div class="result-banner" id="res_b1"></div>
+</div>
+
+<!-- EX 2: BE NEGATIVES & QUESTIONS -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">2</div><div><div class="ex-type">Multiple Choice</div><h4>Choose the correct form of BE in each sentence.</h4></div></div>
+  <p class="mc-q">1. "_______ you from Argentina?" — "Yes, I am!"</p>
+  <div id="mc_1">
+    <div class="mc-option" onclick="doMC(this,'mc_1','A','B')"><div class="mc-letter">A</div>Is</div>
+    <div class="mc-option" onclick="doMC(this,'mc_1','B','B')"><div class="mc-letter">B</div>Are</div>
+    <div class="mc-option" onclick="doMC(this,'mc_1','C','B')"><div class="mc-letter">C</div>Am</div>
+  </div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">2. "She _______ a nurse. She works in a hospital."</p>
+  <div id="mc_2">
+    <div class="mc-option" onclick="doMC(this,'mc_2','A','C')"><div class="mc-letter">A</div>am</div>
+    <div class="mc-option" onclick="doMC(this,'mc_2','B','C')"><div class="mc-letter">B</div>are</div>
+    <div class="mc-option" onclick="doMC(this,'mc_2','C','C')"><div class="mc-letter">C</div>is</div>
+  </div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">3. "They _______ married. They're just good friends."</p>
+  <div id="mc_3">
+    <div class="mc-option" onclick="doMC(this,'mc_3','A','A')"><div class="mc-letter">A</div>aren't</div>
+    <div class="mc-option" onclick="doMC(this,'mc_3','B','A')"><div class="mc-letter">B</div>isn't</div>
+    <div class="mc-option" onclick="doMC(this,'mc_3','C','A')"><div class="mc-letter">C</div>am not</div>
+  </div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans2')">Show Explanations</button></div>
+  <div class="answer-reveal" id="ans2"><span class="ar-label">Explanations</span><li>Are → question with YOU always uses ARE</li><li>is → HE/SHE/IT always uses IS</li><li>aren't → THEY negative = are not / aren't</li></div>
+</div>
+
+<!-- EX 3: WRITE ABOUT YOURSELF -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">3</div><div><div class="ex-type">Writing Task</div><h4>Complete these sentences about YOU with the verb BE.</h4></div></div>
+  <div class="speaking-grid">
+    <div class="speaking-card"><div class="sc-num">01</div><p>I _______ from...</p><input type="text" class="my-answer" placeholder="I am from..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">02</div><p>I _______ a... (your job/role)</p><input type="text" class="my-answer" placeholder="I am a..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">03</div><p>Today I _______...</p><input type="text" class="my-answer" placeholder="Today I am..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">04</div><p>My favourite city _______...</p><input type="text" class="my-answer" placeholder="My favourite city is..." oninput="trackProgress()"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 2 — PRESENT SIMPLE AFFIRMATIVE
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Two ✦</span></div>
+<div class="unit-header u2">
+  <span class="unit-tag">✦ Unit Two ✦</span>
+  <h2>Affirmative Sentences 🧡</h2>
+  <p>How to say what you do, what you like, and how you live — the foundation of the Present Simple.</p>
+  <div class="unit-meta"><span>⏱ 45–60 min</span><span>📌 I / You / He / She...</span><span>🎯 Habits & Facts</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Affirmative Present Simple</span>
+  <h4>The key rule: add -S for he / she / it</h4>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">I / You / We / They</span>
+      <div class="rule-text">
+        I <em>work</em> in a school.<br>
+        You <em>live</em> in Buenos Aires.<br>
+        We <em>eat</em> dinner at 8pm.<br>
+        They <em>speak</em> English at work.
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">He / She / It ⚠️ +S</span>
+      <div class="rule-text">
+        He <em>works</em> in a school.<br>
+        She <em>lives</em> in Buenos Aires.<br>
+        It <em>opens</em> at 9am.<br>
+        My sister <em>speaks</em> three languages.
+      </div>
+    </div>
+  </div>
+  <div class="grammar-rule" style="margin-top:10px;">
+    <span class="rule-label">Special spelling rules for HE/SHE/IT</span>
+    <div class="rule-text" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+      <div>verb + <em>-es</em><br><small>go → go<em>es</em><br>do → do<em>es</em><br>watch → watch<em>es</em><br>finish → finish<em>es</em></small></div>
+      <div>consonant+y → <em>-ies</em><br><small>stud<em>y</em> → stud<em>ies</em><br>carr<em>y</em> → carr<em>ies</em><br>fl<em>y</em> → fl<em>ies</em></small></div>
+      <div>vowel+y → <em>+s</em><br><small>play → play<em>s</em><br>enjoy → enjoy<em>s</em><br>say → say<em>s</em></small></div>
+    </div>
+  </div>
+</div>
+
+<!-- VOCAB: COMMON VERBS -->
+<div class="sec-label">
+  <div class="sec-icon si-orange">📚</div>
+  <div class="sec-label-text"><span>Vocabulary</span><h3>25 Essential Verbs — click to see meaning</h3></div>
+</div>
+<div class="vocab-grid">
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">wake up</div><div class="vpron">weik ap</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">despertarse</div><div class="vexample">"I wake up at 7."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">eat / drink</div><div class="vpron">it / drink</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">comer / beber</div><div class="vexample">"She eats salad for lunch."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">work / study</div><div class="vpron">wörk / stádi</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">trabajar / estudiar</div><div class="vexample">"He works from home."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">live</div><div class="vpron">liv</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">vivir</div><div class="vexample">"We live in the city."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">like / love</div><div class="vpron">laik / lov</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">gustar / amar</div><div class="vexample">"I love chocolate!"</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">go</div><div class="vpron">gou</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">ir</div><div class="vexample">"She goes to the gym."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">have</div><div class="vpron">hav</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">tener</div><div class="vexample">"He has two cats."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">watch / read</div><div class="vpron">woch / rid</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">mirar / leer</div><div class="vexample">"I read every night."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">speak / talk</div><div class="vpron">spik / tok</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">hablar</div><div class="vexample">"She speaks English."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">take / catch</div><div class="vpron">teik / kach</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">tomar / agarrar</div><div class="vexample">"I take the bus to work."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">cook / make</div><div class="vpron">kuk / meik</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">cocinar / hacer</div><div class="vexample">"He cooks every Sunday."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">play</div><div class="vpron">plei</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">jugar / tocar</div><div class="vexample">"She plays the guitar."</div></div></div>
+</div>
+
+<!-- EX 4: CONJUGATION FILL -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">4</div><div><div class="ex-type">Fill in the blank</div><h4>Write the correct form of the verb. Remember the -S rule!</h4></div></div>
+  <div class="tip-strip"><span style="font-size:18px">💡</span><div><strong>Remember:</strong> He / She / It → always add -S (or -ES / -IES depending on the verb!)</div></div>
+  <label class="blank-sentence">1. Maria <input class="blank orange" id="c4a" data-answer="lives" placeholder="live"> in a small flat near the centre.</label>
+  <label class="blank-sentence">2. My brother <input class="blank orange" id="c4b" data-answer="studies" placeholder="study"> medicine at university.</label>
+  <label class="blank-sentence">3. I <input class="blank orange" id="c4c" data-answer="drink" placeholder="drink"> two cups of coffee every morning.</label>
+  <label class="blank-sentence">4. She <input class="blank orange" id="c4d" data-answer="watches" placeholder="watch"> Netflix every evening.</label>
+  <label class="blank-sentence">5. We <input class="blank orange" id="c4e" data-answer="eat" placeholder="eat"> dinner together on Sundays.</label>
+  <label class="blank-sentence">6. He <input class="blank orange" id="c4f" data-answer="goes" placeholder="go"> to the gym three times a week.</label>
+  <label class="blank-sentence">7. They <input class="blank orange" id="c4g" data-answer="speak" placeholder="speak"> Spanish and English at home.</label>
+  <label class="blank-sentence">8. My cat <input class="blank orange" id="c4h" data-answer="sleeps" placeholder="sleep"> on my bed every night!</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('c4',['lives','studies','drink','watches','eat','goes','speak','sleeps'],8,this)">✓ Check Answers</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans4')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('c4',8)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans4"><span class="ar-label">Answers</span><li>lives (she → +s)</li><li>studies (consonant+y → ies)</li><li>drink (I → no change)</li><li>watches (sh/ch/x → +es)</li><li>eat (we → no change)</li><li>goes (go → goes, irregular)</li><li>speak (they → no change)</li><li>sleeps (it → +s)</li></div>
+  <div class="result-banner" id="res_c4"></div>
+</div>
+
+<!-- EX 5: TRUE/FALSE -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">5</div><div><div class="ex-type">True or False</div><h4>Is the sentence grammatically correct? T = Correct, F = Has a mistake.</h4></div></div>
+  <div class="tf-item"><div class="tf-text">She <strong>work</strong> in a hospital from Monday to Friday.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'F')">T</button><button class="tf-btn" onclick="doTF(this,'F')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">My parents <strong>live</strong> in a house near the park.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'T')">T</button><button class="tf-btn" onclick="doTF(this,'T')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">He <strong>studys</strong> English every evening.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'F')">T</button><button class="tf-btn" onclick="doTF(this,'F')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">The supermarket <strong>closes</strong> at 10pm.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'T')">T</button><button class="tf-btn" onclick="doTF(this,'T')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">I <strong>plays</strong> tennis on Saturday mornings.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'F')">T</button><button class="tf-btn" onclick="doTF(this,'F')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">My dog <strong>loves</strong> going for walks in the park.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'T')">T</button><button class="tf-btn" onclick="doTF(this,'T')">F</button></div></div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans5')">Show Corrections</button></div>
+  <div class="answer-reveal" id="ans5"><span class="ar-label">Corrections</span><li>❌ "work" → should be "works" (she = +s)</li><li>✓ Correct!</li><li>❌ "studys" → should be "studies" (y → ies)</li><li>✓ Correct!</li><li>❌ "plays" → should be "play" (I = no s)</li><li>✓ Correct!</li></div>
+</div>
+
+<!-- EX 6: REORDER -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">6</div><div><div class="ex-type">Reorder the words</div><h4>Click words in order to build a correct sentence.</h4></div></div>
+  <div id="ro1">
+    <span class="reorder-label">Click to add words:</span>
+    <div class="reorder-words" id="ro1s"><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">sister</span><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">My</span><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">Spanish</span><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">speaks</span><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">at</span><span class="word-tile tile-source" onclick="mw(this,'ro1s','ro1r')">work</span></div>
+    <span class="reorder-label">Your sentence:</span>
+    <div class="reorder-result" id="ro1r"></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkRO('ro1r','My sister speaks Spanish at work',this,'res_ro1')">✓ Check</button>
+    <button class="btn btn-reset" onclick="resetRO('ro1s','ro1r','res_ro1')">↺ Reset</button>
+  </div>
+  <div class="result-banner" id="res_ro1"></div>
+</div>
+
+<!-- EX 7: WRITE YOUR ROUTINE -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">7</div><div><div class="ex-type">Writing Task</div><h4>Write 6 sentences about your daily routine. Use the Present Simple!</h4></div></div>
+  <div class="callout callout-orange"><span class="callout-emoji">✏️</span><div><strong>Think about:</strong><p>What time do you wake up? What do you eat? Where do you work/study? What do you do in the evenings? What does someone in your family do every day?</p></div></div>
+  <div style="margin-bottom:8px;"><textarea class="writing-box tall" id="wr7" placeholder="1. I wake up at 7am every morning.&#10;2. She drinks coffee before work.&#10;3. He..." oninput="updateCount(this,'wc7');trackProgress()"></textarea><div class="char-count" id="wc7">0 characters</div></div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans7')">💡 See example</button>
+  <div class="answer-reveal" id="ans7"><span class="ar-label">Example</span><li>I wake up at 7am every morning.</li><li>My mum drinks coffee and reads the news for breakfast.</li><li>I take the bus to work — it takes about 30 minutes.</li><li>My sister studies medicine, so she reads a lot.</li><li>In the evening, I cook dinner and watch a series.</li><li>My cat sleeps on the sofa all day — she loves it!</li></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 3 — NEGATIVES
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Three ✦</span></div>
+<div class="unit-header u3">
+  <span class="unit-tag">✦ Unit Three ✦</span>
+  <h2>Negative Sentences 🚫</h2>
+  <p>How to say what you DON'T do — using don't and doesn't correctly every time.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 don't / doesn't</span><span>🎯 Express what you don't do</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Negatives</span>
+  <h4>Two words to learn: DON'T and DOESN'T</h4>
+  <div class="formula">I / You / We / They + <em>don't</em> + verb<span>He / She / It + <em>doesn't</em> + verb (no -s on the main verb!)</span></div>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">DON'T (I/You/We/They)</span>
+      <div class="rule-text">
+        I <em>don't</em> eat meat.<br>
+        You <em>don't</em> like spiders.<br>
+        We <em>don't</em> work on Sundays.<br>
+        They <em>don't</em> speak French.
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">DOESN'T (He/She/It) ⚠️</span>
+      <div class="rule-text">
+        He <em>doesn't</em> eat meat. ✓<br>
+        <s>He doesn't eats meat.</s> ✗<br><br>
+        She <em>doesn't</em> like spiders. ✓<br>
+        <s>She doesn't likes spiders.</s> ✗
+      </div>
+    </div>
+  </div>
+  <div class="grammar-rule" style="margin-top:10px;background:rgba(240,168,196,.2);border-color:rgba(240,168,196,.3);">
+    <span class="rule-label" style="color:var(--pink);">⚠️ Critical Rule</span>
+    <div class="rule-text">After DOESN'T, the main verb goes back to its BASE form (no -s).<br><em>She studies</em> → She <em>doesn't study</em> (NOT ~~doesn't studies~~)</div>
+  </div>
+</div>
+
+<!-- EX 8: NEGATIVES FILL -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">8</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with don't or doesn't + the verb in brackets.</h4></div></div>
+  <label class="blank-sentence">1. I <input class="blank pink" id="d8a" data-answer="don't drink" placeholder="..."> (drink) coffee — I prefer tea.</label>
+  <label class="blank-sentence">2. She <input class="blank pink" id="d8b" data-answer="doesn't like" placeholder="..."> (like) hot weather.</label>
+  <label class="blank-sentence">3. We <input class="blank pink" id="d8c" data-answer="don't have" placeholder="..."> (have) a car — we use the metro.</label>
+  <label class="blank-sentence">4. He <input class="blank pink" id="d8d" data-answer="doesn't work" placeholder="..."> (work) on Saturdays.</label>
+  <label class="blank-sentence">5. My parents <input class="blank pink" id="d8e" data-answer="don't speak" placeholder="..."> (speak) English, only Spanish.</label>
+  <label class="blank-sentence">6. The bank <input class="blank pink" id="d8f" data-answer="doesn't open" placeholder="..."> (open) on Sundays.</label>
+  <label class="blank-sentence">7. I <input class="blank pink" id="d8g" data-answer="don't understand" placeholder="..."> (understand) this exercise!</label>
+  <label class="blank-sentence">8. She <input class="blank pink" id="d8h" data-answer="doesn't eat" placeholder="..."> (eat) meat — she's vegetarian.</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('d8',['don\'t drink','doesn\'t like','don\'t have','doesn\'t work','don\'t speak','doesn\'t open','don\'t understand','doesn\'t eat'],8,this)">✓ Check Answers</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans8')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('d8',8)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans8"><span class="ar-label">Answers</span><li>don't drink</li><li>doesn't like</li><li>don't have</li><li>doesn't work</li><li>don't speak</li><li>doesn't open</li><li>don't understand</li><li>doesn't eat</li></div>
+  <div class="result-banner" id="res_d8"></div>
+</div>
+
+<!-- EX 9: ERROR CORRECTION -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">9</div><div><div class="ex-type">Error Correction</div><h4>Each sentence has a mistake. Find it and write the correct version.</h4></div></div>
+  <div class="error-box">1. She <span class="err">don't likes</span> classical music.</div>
+  <input class="correction-input" placeholder="Correct: She doesn't like classical music." id="ec9a" data-answer="She doesn't like classical music.">
+  <div class="error-box">2. He <span class="err">doesn't works</span> in the morning — only in the afternoon.</div>
+  <input class="correction-input" placeholder="Correct: He doesn't work..." id="ec9b" data-answer="He doesn't work in the morning — only in the afternoon.">
+  <div class="error-box">3. I <span class="err">doesn't</span> have a pet.</div>
+  <input class="correction-input" placeholder="Correct: I don't..." id="ec9c" data-answer="I don't have a pet.">
+  <div class="error-box">4. They <span class="err">not eat</span> breakfast — they wake up too late.</div>
+  <input class="correction-input" placeholder="Correct: They don't eat..." id="ec9d" data-answer="They don't eat breakfast — they wake up too late.">
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans9')">Show Answers</button></div>
+  <div class="answer-reveal" id="ans9"><span class="ar-label">Correct Versions</span><li>She <strong>doesn't like</strong> classical music. (she = doesn't; base verb, no -s)</li><li>He <strong>doesn't work</strong> in the morning. (doesn't = base verb, no -s)</li><li>I <strong>don't</strong> have a pet. (I = don't, not doesn't)</li><li>They <strong>don't eat</strong> breakfast. (must use do/don't to make negative)</li></div>
+</div>
+
+<!-- EX 10: CHOOSE YOUR ANSWER — ABOUT YOU -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">10</div><div><div class="ex-type">Personalise It!</div><h4>Choose the answer that is true for YOU. Then say it out loud!</h4></div></div>
+  <div class="check-q">🥦 Do you eat vegetables every day?</div>
+  <div class="check-opts">
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>Yes! I eat a lot of vegetables. I love them.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>Sometimes. I don't eat them every day.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>No, I don't like vegetables much. 😅</div>
+  </div>
+  <div class="check-q">📺 Do you watch TV in the evenings?</div>
+  <div class="check-opts">
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>Yes, I watch TV every evening.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I don't watch TV — I prefer Netflix.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>No, I don't watch TV at all.</div>
+  </div>
+  <div class="check-q">☕ Does someone in your family drink coffee?</div>
+  <div class="check-opts">
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>Yes! My mum / dad drinks coffee all day.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>No, nobody in my family drinks coffee.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>My whole family loves coffee! ☕</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 4 — QUESTIONS
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Four ✦</span></div>
+<div class="unit-header u4">
+  <span class="unit-tag">✦ Unit Four ✦</span>
+  <h2>Questions &amp; Short Answers ❓</h2>
+  <p>How to ask questions in English — with DO and DOES — and how to give perfect short answers.</p>
+  <div class="unit-meta"><span>⏱ 45–55 min</span><span>📌 Do / Does...?</span><span>🎯 Ask &amp; answer naturally</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Questions</span>
+  <h4>DO and DOES come FIRST in yes/no questions</h4>
+  <div class="formula"><em>Do</em> + I/you/we/they + verb...? — <em>Does</em> + he/she/it + verb...?<span>After DOES, the verb has NO -s → Does she work? ✓ (NOT Does she works? ✗)</span></div>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">Yes/No Questions</span>
+      <div class="rule-text">
+        <em>Do</em> you like coffee?<br>→ Yes, I <em>do</em>. / No, I <em>don't</em>.<br><br>
+        <em>Does</em> she work here?<br>→ Yes, she <em>does</em>. / No, she <em>doesn't</em>.
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">WH- Questions</span>
+      <div class="rule-text">
+        <em>Where</em> do you live?<br>
+        <em>What</em> does she do? (job)<br>
+        <em>When</em> do you wake up?<br>
+        <em>Why</em> does he study English?<br>
+        <em>How</em> do you get to work?<br>
+        <em>Who</em> do you live with?
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VOCAB: QUESTION WORDS -->
+<div class="sec-label">
+  <div class="sec-icon si-yellow">📚</div>
+  <div class="sec-label-text"><span>Vocabulary</span><h3>Question Words — The Essentials</h3></div>
+</div>
+<div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Word</th><th>Cómo suena</th><th>Para preguntar sobre...</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td class="rword">What</td><td class="rpron">wot</td><td>cosa / acción</td><td>What do you eat for breakfast?</td></tr>
+      <tr><td class="rword">Where</td><td class="rpron">wer</td><td>lugar</td><td>Where do you work?</td></tr>
+      <tr><td class="rword">When</td><td class="rpron">wen</td><td>tiempo / momento</td><td>When does the film start?</td></tr>
+      <tr><td class="rword">Who</td><td class="rpron">hu</td><td>persona</td><td>Who do you live with?</td></tr>
+      <tr><td class="rword">Why</td><td class="rpron">wai</td><td>razón / causa</td><td>Why do you study English?</td></tr>
+      <tr><td class="rword">How</td><td class="rpron">hau</td><td>manera / forma</td><td>How do you get to school?</td></tr>
+      <tr><td class="rword">How much</td><td class="rpron">hau mach</td><td>precio / cantidad</td><td>How much does it cost?</td></tr>
+      <tr><td class="rword">How many</td><td class="rpron">hau méni</td><td>número (countable)</td><td>How many cups do you drink?</td></tr>
+      <tr><td class="rword">How often</td><td class="rpron">hau ófen</td><td>frecuencia</td><td>How often do you exercise?</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- EX 11: FILL QUESTIONS -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">11</div><div><div class="ex-type">Fill in the blank</div><h4>Complete the questions with Do or Does.</h4></div></div>
+  <div class="word-bank"><span class="wb-label">Word bank:</span><span class="word-chip">Do</span><span class="word-chip">Does</span></div>
+  <label class="blank-sentence">1. <input class="blank yellow" id="q11a" data-answer="Do" placeholder="..."> you speak any other languages?</label>
+  <label class="blank-sentence">2. <input class="blank yellow" id="q11b" data-answer="Does" placeholder="..."> your sister live near you?</label>
+  <label class="blank-sentence">3. <input class="blank yellow" id="q11c" data-answer="Do" placeholder="..."> they have children?</label>
+  <label class="blank-sentence">4. <input class="blank yellow" id="q11d" data-answer="Does" placeholder="..."> he work from home?</label>
+  <label class="blank-sentence">5. <input class="blank yellow" id="q11e" data-answer="Do" placeholder="..."> we need to bring anything?</label>
+  <label class="blank-sentence">6. <input class="blank yellow" id="q11f" data-answer="Does" placeholder="..."> the supermarket open at 8am?</label>
+  <label class="blank-sentence">7. <input class="blank yellow" id="q11g" data-answer="Do" placeholder="..."> you and your partner enjoy cooking?</label>
+  <label class="blank-sentence">8. <input class="blank yellow" id="q11h" data-answer="Does" placeholder="..."> it rain a lot in your city?</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('q11',['Do','Does','Do','Does','Do','Does','Do','Does'],8,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans11')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('q11',8)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans11"><span class="ar-label">Answers</span><li>Do (you)</li><li>Does (sister = she)</li><li>Do (they)</li><li>Does (he)</li><li>Do (we)</li><li>Does (supermarket = it)</li><li>Do (you)</li><li>Does (it)</li></div>
+  <div class="result-banner" id="res_q11"></div>
+</div>
+
+<!-- EX 12: WRITE THE QUESTION -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">12</div><div><div class="ex-type">Make the question</div><h4>Read the answer. Write the question that goes with it.</h4></div></div>
+  <div class="callout callout-yellow"><span class="callout-emoji">💡</span><div><p>Look at the answer carefully — it tells you which question word to use (what, where, when, how often...)</p></div></div>
+  <p style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;">1. Answer: "I live in Palermo, in Buenos Aires."</p>
+  <input class="correction-input" placeholder="Where do you live?" id="wq1" data-answer="Where do you live?">
+  <p style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;">2. Answer: "She works as a graphic designer."</p>
+  <input class="correction-input" placeholder="What does she do?" id="wq2" data-answer="What does she do?">
+  <p style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;">3. Answer: "I exercise three times a week."</p>
+  <input class="correction-input" placeholder="How often do you exercise?" id="wq3" data-answer="How often do you exercise?">
+  <p style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;">4. Answer: "He takes the bus to work."</p>
+  <input class="correction-input" placeholder="How does he get to work?" id="wq4" data-answer="How does he get to work?">
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans12')">Show Answers</button></div>
+  <div class="answer-reveal" id="ans12"><span class="ar-label">Model Questions</span><li>Where do you live?</li><li>What does she do? (= What is her job?)</li><li>How often do you exercise?</li><li>How does he get to work?</li></div>
+</div>
+
+<!-- EX 13: CONVERSATION MATCHING -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">13</div><div><div class="ex-type">Matching</div><h4>Match each question (left) with the correct short answer (right).</h4></div></div>
+  <div class="match-container">
+    <div>
+      <h5>Questions</h5>
+      <div class="match-item" id="ml_1" onclick="doMatch(this,'left','1')">Do you like sushi?</div>
+      <div class="match-item" id="ml_2" onclick="doMatch(this,'left','2')">Does she work here?</div>
+      <div class="match-item" id="ml_3" onclick="doMatch(this,'left','3')">Do they speak French?</div>
+      <div class="match-item" id="ml_4" onclick="doMatch(this,'left','4')">Does it cost a lot?</div>
+    </div>
+    <div>
+      <h5>Short Answers</h5>
+      <div class="match-item" id="mr_2" onclick="doMatch(this,'right','2')">No, she doesn't.</div>
+      <div class="match-item" id="mr_4" onclick="doMatch(this,'right','4')">Yes, it does.</div>
+      <div class="match-item" id="mr_1" onclick="doMatch(this,'right','1')">Yes, I do! I love it.</div>
+      <div class="match-item" id="mr_3" onclick="doMatch(this,'right','3')">No, they don't.</div>
+    </div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-show" onclick="toggleAnswer('ans13')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetAllMatch()">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans13"><span class="ar-label">Matches</span><li>Do you like sushi? → Yes, I do!</li><li>Does she work here? → No, she doesn't.</li><li>Do they speak French? → No, they don't.</li><li>Does it cost a lot? → Yes, it does.</li></div>
+</div>
+
+<!-- EX 14: SPEAKING — INTERVIEW -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">14</div><div><div class="ex-type">Speaking Practice</div><h4>Answer these questions about YOU. Write full sentences.</h4></div></div>
+  <div class="speaking-grid">
+    <div class="speaking-card"><div class="sc-num">Q1</div><p>What time do you usually wake up?</p><input type="text" class="my-answer" placeholder="I usually wake up at..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">Q2</div><p>Where do you work or study?</p><input type="text" class="my-answer" placeholder="I work / study at..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">Q3</div><p>Do you live alone or with family?</p><input type="text" class="my-answer" placeholder="I live with / alone..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">Q4</div><p>What do you do in the evenings?</p><input type="text" class="my-answer" placeholder="In the evenings, I..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">Q5</div><p>Does anyone in your family speak English?</p><input type="text" class="my-answer" placeholder="Yes, my... does. / No, nobody..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">Q6</div><p>How do you get to work or school?</p><input type="text" class="my-answer" placeholder="I take the bus / I drive / I walk..." oninput="trackProgress()"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 5 — TIME EXPRESSIONS & ROUTINE
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Five ✦</span></div>
+<div class="unit-header u5">
+  <span class="unit-tag">✦ Unit Five ✦</span>
+  <h2>Time Expressions &amp; My Routine ✨</h2>
+  <p>The words that tell you HOW OFTEN and WHEN — plus a final big writing task to put it all together.</p>
+  <div class="unit-meta"><span>⏱ 40–50 min</span><span>📌 Adverbs of frequency</span><span>🎯 Talk about your life</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Frequency &amp; Time</span>
+  <h4>Where do these words go in the sentence?</h4>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">Adverbs of Frequency</span>
+      <div class="rule-text">
+        100% → <em>always</em> — I always drink water.<br>
+        80% → <em>usually</em> — She usually works late.<br>
+        60% → <em>often</em> — We often eat out.<br>
+        40% → <em>sometimes</em> — He sometimes runs.<br>
+        20% → <em>rarely / hardly ever</em><br>
+        0% → <em>never</em> — They never watch TV.<br><br>
+        ⚠️ Position: <em>BEFORE</em> the main verb.<br>
+        I <em>always</em> eat breakfast. ✓<br>
+        <s>I eat always breakfast.</s> ✗
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Time Expressions</span>
+      <div class="rule-text">
+        <em>every day / week / month / year</em><br>
+        <em>on Mondays / on weekdays / on weekends</em><br>
+        <em>in the morning / afternoon / evening</em><br>
+        <em>at night / at 7am / at lunchtime</em><br>
+        <em>once / twice / three times a week</em><br>
+        <em>in the morning / at the weekend</em><br><br>
+        ⚠️ Position: usually at the <em>END</em> of the sentence.<br>
+        I go to the gym <em>on Mondays</em>. ✓
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EX 15: FREQUENCY FILL -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">15</div><div><div class="ex-type">Fill in the blank</div><h4>Add the adverb of frequency in the correct position.</h4></div></div>
+  <div class="callout callout-lila"><span class="callout-emoji">💡</span><div><p>Put the adverb BEFORE the main verb (but AFTER "be"). Example: She <strong>always</strong> arrives early.</p></div></div>
+  <label class="blank-sentence">1. I (always) <input class="blank" id="f15a" data-answer="always wake up" placeholder="..."> at 7am. I never sleep late.</label>
+  <label class="blank-sentence">2. She (never) <input class="blank" id="f15b" data-answer="never eats" placeholder="..."> breakfast — she's not hungry in the morning.</label>
+  <label class="blank-sentence">3. We (sometimes) <input class="blank" id="f15c" data-answer="sometimes go" placeholder="..."> to the cinema on Fridays.</label>
+  <label class="blank-sentence">4. He (usually) <input class="blank" id="f15d" data-answer="usually drinks" placeholder="..."> tea, not coffee.</label>
+  <label class="blank-sentence">5. I (often) <input class="blank" id="f15e" data-answer="often work" placeholder="..."> from home on Mondays.</label>
+  <label class="blank-sentence">6. They (rarely) <input class="blank" id="f15f" data-answer="rarely cook" placeholder="..."> at home — they prefer restaurants.</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('f15',['always wake up','never eats','sometimes go','usually drinks','often work','rarely cook'],6,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans15')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('f15',6)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans15"><span class="ar-label">Answers</span><li>always wake up (before the verb)</li><li>never eats (before the verb)</li><li>sometimes go (before the verb)</li><li>usually drinks (before the verb)</li><li>often work (before the verb)</li><li>rarely cook (before the verb)</li></div>
+  <div class="result-banner" id="res_f15"></div>
+</div>
+
+<!-- EX 16: REORDER WITH FREQUENCY -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">16</div><div><div class="ex-type">Reorder</div><h4>Build a correct sentence with a time expression.</h4></div></div>
+  <div id="ro2">
+    <span class="reorder-label">Click words to add:</span>
+    <div class="reorder-words" id="ro2s"><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">usually</span><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">I</span><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">on</span><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">cook</span><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">Sundays</span><span class="word-tile tile-source" onclick="mw(this,'ro2s','ro2r')">dinner</span></div>
+    <span class="reorder-label">Your sentence:</span>
+    <div class="reorder-result" id="ro2r"></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkRO('ro2r','I usually cook dinner on Sundays',this,'res_ro2')">✓ Check</button>
+    <button class="btn btn-reset" onclick="resetRO('ro2s','ro2r','res_ro2')">↺ Reset</button>
+  </div>
+  <div class="result-banner" id="res_ro2"></div>
+</div>
+
+<!-- EX 17: COMPLETE THE TABLE ABOUT YOU -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">17</div><div><div class="ex-type">My Routine Table</div><h4>Complete this table about your week. Write true sentences!</h4></div></div>
+  <div class="table-wrap">
+    <table class="ref-table">
+      <thead><tr><th>When?</th><th>What do you do? (write your sentence)</th></tr></thead>
+      <tbody>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">Every morning</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="Every morning, I..." oninput="trackProgress()"></td></tr>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">On weekdays</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="On weekdays, I..." oninput="trackProgress()"></td></tr>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">At lunchtime</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="At lunchtime, I..." oninput="trackProgress()"></td></tr>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">In the evening</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="In the evening, I..." oninput="trackProgress()"></td></tr>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">On weekends</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="On weekends, I..." oninput="trackProgress()"></td></tr>
+        <tr><td style="white-space:nowrap;font-weight:600;color:var(--lila-deep);">I never...</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;padding:2px 0;color:var(--text);" placeholder="I never..." oninput="trackProgress()"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EX 18: FINAL BIG WRITING -->
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">18</div><div><div class="ex-type">Final Writing Task ⭐</div><h4>Write a paragraph about your typical week (80–100 words).</h4></div></div>
+  <div class="callout callout-lila"><span class="callout-emoji">✍️</span><div><strong>Use EVERYTHING you've learned:</strong><p>Affirmative (+), negative (−), questions (?), frequency adverbs (always/sometimes/never), time expressions (on Mondays / in the morning / at night). Try to write about yourself AND someone else (he/she).</p></div></div>
+  <textarea class="writing-box tall" id="wr18" placeholder="My typical week is quite busy. I usually wake up at... On weekdays, I... My [partner/mum/friend] works as a... She/He usually... At the weekend, we... I never... but I sometimes..." oninput="updateCount(this,'wc18');trackProgress()"></textarea>
+  <div class="char-count" id="wc18">0 characters (aim for 80–100 words)</div>
+  <div class="btn-row">
+    <button class="btn btn-lila" onclick="toggleAnswer('ans18')">💡 See example</button>
+  </div>
+  <div class="answer-reveal" id="ans18"><span class="ar-label">Example Answer (A1)</span><li><em>"My typical week is very busy! I usually wake up at 6:30am and I always drink coffee before I leave home. On weekdays, I work in an office from 9am to 6pm. I usually have lunch with my colleagues. My sister doesn't work — she studies medicine at university. She studies a lot! In the evenings, I sometimes cook dinner and watch a series on Netflix. I never go to bed after midnight — I wake up too early! On weekends, I often meet friends for brunch or visit my parents."</em></li></div>
+</div>
+
+<!-- REFLECTION -->
+
+<!-- ══════════════════════════════════════
+     UNIT 6 — HAVE / HAVE GOT
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Six ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FEF0F6 0%,#F2EEFB 100%);border:1px solid var(--pink);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">👜</span>
+  <span class="unit-tag" style="color:var(--pink-deep);">✦ Unit Six ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Have &amp; Have Got 👜</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Talk about what you own, your family, and what you possess — using HAVE and HAVE GOT.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 have / has / have got</span><span>🎯 Possessions &amp; Family</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — HAVE</span>
+  <h4>Two ways to say the same thing!</h4>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">HAVE (more common in USA)</span>
+      <div class="rule-text">I <em>have</em> a cat. / She <em>has</em> a car.<br>Do you <em>have</em> a brother?<br>He doesn't <em>have</em> a job right now.<br><br>⚠️ He/She/It → <em>HAS</em> (not have!)</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">HAVE GOT (more common in UK)</span>
+      <div class="rule-text">I<em>'ve got</em> a cat. / She<em>'s got</em> a car.<br><em>Have</em> you <em>got</em> a brother?<br>He <em>hasn't got</em> a job right now.<br><br>Both are correct — learn both!</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Common uses</span>
+      <div class="rule-text">✦ Possessions: I have a laptop.<br>✦ Family: She has two sisters.<br>✦ Descriptions: He has blue eyes.<br>✦ Illnesses: I have a headache.</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Questions</span>
+      <div class="rule-text"><em>Do</em> you <em>have</em> a car? → Yes, I do.<br><em>Have</em> you <em>got</em> a car? → Yes, I have.<br><em>Does</em> she <em>have</em> a pet? → No, she doesn't.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-label">
+  <div class="sec-icon si-pink">📚</div>
+  <div class="sec-label-text"><span>Vocabulary</span><h3>Things you might HAVE — click to flip!</h3></div>
+</div>
+<div class="vocab-grid">
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">a pet</div><div class="vpron">a pet</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">una mascota</div><div class="vexample">"I have a dog and a cat."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">a driving licence</div><div class="vpron">dráivin láisens</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">licencia de conducir</div><div class="vexample">"She has a driving licence."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">a headache</div><div class="vpron">hédeik</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">dolor de cabeza</div><div class="vexample">"I have a headache today."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">free time</div><div class="vpron">fri taim</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">tiempo libre</div><div class="vexample">"Do you have free time today?"</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">a job</div><div class="vpron">a yob</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">un trabajo</div><div class="vexample">"He doesn't have a job yet."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">blue / brown eyes</div><div class="vpron">blu / braun ais</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">ojos azules / marrones</div><div class="vexample">"My sister has brown eyes."</div></div></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">19</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with have, has, don't have, or doesn't have.</h4></div></div>
+  <label class="blank-sentence">1. I <input class="blank pink" id="u6a" data-answer="have" placeholder="..."> a big family — three sisters and two brothers!</label>
+  <label class="blank-sentence">2. She <input class="blank pink" id="u6b" data-answer="has" placeholder="..."> beautiful long hair.</label>
+  <label class="blank-sentence">3. They <input class="blank pink" id="u6c" data-answer="don't have" placeholder="..."> a car — they always take the bus.</label>
+  <label class="blank-sentence">4. <input class="blank pink" id="u6d" data-answer="Do" placeholder="..."> you <input class="blank pink" id="u6e" data-answer="have" placeholder="..."> any brothers or sisters?</label>
+  <label class="blank-sentence">5. He <input class="blank pink" id="u6f" data-answer="doesn't have" placeholder="..."> a driving licence yet.</label>
+  <label class="blank-sentence">6. My cat <input class="blank pink" id="u6g" data-answer="has" placeholder="..."> green eyes and white fur.</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('u6',['have','has','don\'t have','Do','have','doesn\'t have','has'],7,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans_u6')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('u6',7)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans_u6"><span class="ar-label">Answers</span><li>have</li><li>has (she→has)</li><li>don't have</li><li>Do … have</li><li>doesn't have</li><li>has (cat=it→has)</li></div>
+  <div class="result-banner" id="res_u6"></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">20</div><div><div class="ex-type">Writing Task</div><h4>Write 5 sentences about what you have (or don't have).</h4></div></div>
+  <div class="callout callout-pink"><span class="callout-emoji">✏️</span><div><p>Think about: pets, family members, a car, hobbies, physical features, a house/flat...</p></div></div>
+  <textarea class="writing-box" placeholder="I have... / I don't have... / My [family member] has... / She/He has..." oninput="updateCount(this,'wc_u6');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u6">0 characters</div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans_u6w')">💡 Example</button>
+  <div class="answer-reveal" id="ans_u6w"><span class="ar-label">Example</span><li>I have a small flat in the city centre.</li><li>I don't have a car — I take the metro everywhere.</li><li>I have two sisters and one brother.</li><li>My mum has dark curly hair and brown eyes.</li><li>My cat has the most beautiful green eyes!</li></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 7 — MY FAMILY
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Seven ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FFFAEB 0%,#FEF0F6 100%);border:1px solid var(--yellow-mid);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">👨‍👩‍👧</span>
+  <span class="unit-tag" style="color:var(--yellow-dark);">✦ Unit Seven ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">My Family 👨‍👩‍👧</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Describe your family members — who they are, what they look like, and what they do.</p>
+  <div class="unit-meta"><span>⏱ 40–50 min</span><span>📌 Family vocabulary</span><span>🎯 Describe people</span></div>
+</div>
+
+<div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Relationship</th><th>English</th><th>Cómo suena</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>madre / padre</td><td class="rword">mother / father</td><td class="rpron">máder / fáder</td><td>My mother is a teacher.</td></tr>
+      <tr><td>mamá / papá</td><td class="rword">mum / dad</td><td class="rpron">mam / dad</td><td>My mum works in a hospital.</td></tr>
+      <tr><td>hermana / hermano</td><td class="rword">sister / brother</td><td class="rpron">síster / bráder</td><td>My sister is 28 years old.</td></tr>
+      <tr><td>hija / hijo</td><td class="rword">daughter / son</td><td class="rpron">dóter / san</td><td>I have a daughter and two sons.</td></tr>
+      <tr><td>abuela / abuelo</td><td class="rword">grandmother / grandfather</td><td class="rpron">grándmader / grándfader</td><td>My grandmother is 75.</td></tr>
+      <tr><td>tía / tío</td><td class="rword">aunt / uncle</td><td class="rpron">ant / ánkel</td><td>My uncle lives in Spain.</td></tr>
+      <tr><td>prima / primo</td><td class="rword">cousin</td><td class="rpron">kásen</td><td>I have 6 cousins.</td></tr>
+      <tr><td>esposo/a / pareja</td><td class="rword">husband / wife / partner</td><td class="rpron">hásband / waif / párner</td><td>My husband works from home.</td></tr>
+      <tr><td>hijo único</td><td class="rword">only child</td><td class="rpron">ounli chaild</td><td>I'm an only child.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Describing People — Adjectives</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">Age &amp; Size</span>
+      <div class="rule-text">young / old / middle-aged<br>tall / short / medium height<br>slim / overweight / athletic</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Hair</span>
+      <div class="rule-text">long / short / curly / straight / wavy<br>blonde / brown / black / grey / red<br>She has <em>long brown hair</em>.</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Eyes</span>
+      <div class="rule-text">blue / green / brown / dark eyes<br>He has <em>blue eyes</em>.<br>She's got <em>big dark eyes</em>.</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Personality</span>
+      <div class="rule-text">friendly / shy / funny / kind / serious<br>quiet / loud / hardworking / lazy<br>My brother is very <em>funny</em>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">21</div><div><div class="ex-type">Multiple Choice</div><h4>Choose the correct word to complete each sentence about family.</h4></div></div>
+  <p class="mc-q">1. My mother's sister is my ________.</p>
+  <div id="mc_u7a">
+    <div class="mc-option" onclick="doMC(this,'mc_u7a','A','B')"><div class="mc-letter">A</div>cousin</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7a','B','B')"><div class="mc-letter">B</div>aunt</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7a','C','B')"><div class="mc-letter">C</div>niece</div>
+  </div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">2. I don't have any siblings. I am an ________.</p>
+  <div id="mc_u7b">
+    <div class="mc-option" onclick="doMC(this,'mc_u7b','A','C')"><div class="mc-letter">A</div>single person</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7b','B','C')"><div class="mc-letter">B</div>lonely child</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7b','C','C')"><div class="mc-letter">C</div>only child</div>
+  </div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">3. She has ________ hair — it's not straight at all, it has lots of curls!</p>
+  <div id="mc_u7c">
+    <div class="mc-option" onclick="doMC(this,'mc_u7c','A','A')"><div class="mc-letter">A</div>curly</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7c','B','A')"><div class="mc-letter">B</div>blonde</div>
+    <div class="mc-option" onclick="doMC(this,'mc_u7c','C','A')"><div class="mc-letter">C</div>short</div>
+  </div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans_u7')">Show Answers</button></div>
+  <div class="answer-reveal" id="ans_u7"><span class="ar-label">Answers</span><li>aunt (mother's sister = aunt)</li><li>only child (no siblings = only child)</li><li>curly (the context says "lots of curls")</li></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">22</div><div><div class="ex-type">Writing Task</div><h4>Describe a family member in 5–8 sentences. Use BE, HAVE, and adjectives!</h4></div></div>
+  <div class="callout callout-yellow"><span class="callout-emoji">✏️</span><div><p>Include: name, age, relationship to you, what they look like, their personality, what they do for work.</p></div></div>
+  <textarea class="writing-box tall" placeholder="Her name is... She is my... She is [age] years old. She has [hair/eyes description]. She is [personality adjectives]. She works as a... She always/usually/never..." oninput="updateCount(this,'wc_u7');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u7">0 characters</div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans_u7w')">💡 Example</button>
+  <div class="answer-reveal" id="ans_u7w"><span class="ar-label">Example</span><li>Her name is Claudia and she is my older sister. She is 38 years old. She has long, curly dark hair and big brown eyes. She is very funny and kind — everyone loves her. She works as a nurse at a big hospital. She usually works long hours, but she never complains. She loves cooking and she always makes amazing food on Sundays!</li></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 8 — FOOD & DRINK
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Eight ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FFF3EB 0%,#FFFAEB 100%);border:1px solid var(--orange);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">🍕</span>
+  <span class="unit-tag" style="color:var(--orange-dark);">✦ Unit Eight ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Food &amp; Drink 🍕</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Talk about what you like, love, hate and eat — with essential food vocabulary.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 like/love/hate + food</span><span>🎯 Preferences &amp; meals</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Likes &amp; Dislikes</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">Expressing preferences</span>
+      <div class="rule-text">
+        I <em>love</em> chocolate! ❤️❤️<br>
+        I <em>really like</em> pizza. ❤️<br>
+        I <em>like</em> salad. 🙂<br>
+        I <em>don't mind</em> vegetables. 😐<br>
+        I <em>don't like</em> spicy food. 🙁<br>
+        I <em>hate</em> mushrooms! 😤
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">With he/she/it</span>
+      <div class="rule-text">
+        She <em>loves</em> sushi.<br>
+        He <em>doesn't like</em> fish.<br>
+        My sister <em>hates</em> onions.<br>
+        My dog <em>loves</em> chicken!<br><br>
+        ⚠️ love<em>s</em> / like<em>s</em> / hate<em>s</em> — don't forget the S!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-label">
+  <div class="sec-icon si-orange">📚</div>
+  <div class="sec-label-text"><span>Vocabulary</span><h3>Food &amp; Drink — click to learn!</h3></div>
+</div>
+<div class="vocab-grid">
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">meat / chicken</div><div class="vpron">mit / chíken</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">carne / pollo</div><div class="vexample">"I eat chicken twice a week."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">fish / seafood</div><div class="vpron">fish / sifud</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">pescado / mariscos</div><div class="vexample">"She loves seafood."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">vegetables</div><div class="vpron">véyetabels</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">verduras</div><div class="vexample">"He doesn't eat vegetables."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">fruit</div><div class="vpron">frut</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">fruta</div><div class="vexample">"I eat fruit every morning."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">bread / pasta / rice</div><div class="vpron">bred / pásta / rais</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">pan / pasta / arroz</div><div class="vexample">"We eat pasta on Wednesdays."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">water / juice / coffee</div><div class="vpron">wóter / yus / kófi</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">agua / jugo / café</div><div class="vexample">"I drink coffee every morning."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">breakfast / lunch / dinner</div><div class="vpron">brékfast / lanch / díner</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">desayuno / almuerzo / cena</div><div class="vexample">"I have lunch at 1pm."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">snack / dessert</div><div class="vpron">snak / desért</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">merienda / postre</div><div class="vexample">"I always have a snack at 4pm."</div></div></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">23</div><div><div class="ex-type">True or False</div><h4>Are these sentences grammatically correct? T = Yes, F = Has a mistake.</h4></div></div>
+  <div class="tf-item"><div class="tf-text">My mum <strong>love</strong> cooking — she spends hours in the kitchen.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'F')">T</button><button class="tf-btn" onclick="doTF(this,'F')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">I <strong>don't like</strong> spicy food — it's too hot for me!</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'T')">T</button><button class="tf-btn" onclick="doTF(this,'T')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">He <strong>hates</strong> vegetables but he eats them anyway because they're healthy.</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'T')">T</button><button class="tf-btn" onclick="doTF(this,'T')">F</button></div></div>
+  <div class="tf-item"><div class="tf-text">Does she <strong>likes</strong> Japanese food?</div><div class="tf-btns"><button class="tf-btn" onclick="doTF(this,'F')">T</button><button class="tf-btn" onclick="doTF(this,'F')">F</button></div></div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans_u8tf')">Show Corrections</button></div>
+  <div class="answer-reveal" id="ans_u8tf"><span class="ar-label">Answers</span><li>❌ "love" → "loves" (my mum = she, needs -s)</li><li>✓ Correct!</li><li>✓ Correct!</li><li>❌ "likes" → "like" (after does, use base form)</li></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num orange">24</div><div><div class="ex-type">Personalise It!</div><h4>Complete this food survey about YOU. Then share your answers!</h4></div></div>
+  <div class="speaking-grid">
+    <div class="speaking-card"><div class="sc-num">🍕</div><p>I love...</p><input type="text" class="my-answer" placeholder="I love eating..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">🥦</div><p>I don't like...</p><input type="text" class="my-answer" placeholder="I don't like..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">🍳</div><p>For breakfast I usually...</p><input type="text" class="my-answer" placeholder="For breakfast I usually eat/drink..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">🍽️</div><p>For dinner, my family...</p><input type="text" class="my-answer" placeholder="For dinner, my family usually..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">😤</div><p>My partner/friend hates...</p><input type="text" class="my-answer" placeholder="My [person] hates..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">🥗</div><p>I never eat...</p><input type="text" class="my-answer" placeholder="I never eat..." oninput="trackProgress()"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 9 — FREE TIME & HOBBIES
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Nine ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#F2EEFB 0%,#FFF3EB 100%);border:1px solid var(--lila);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">🎸</span>
+  <span class="unit-tag" style="color:var(--lila-deep);">✦ Unit Nine ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Free Time &amp; Hobbies 🎸</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Talk about what you do for fun — sports, hobbies, arts, and activities you enjoy.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 enjoy/love/hate + -ing</span><span>🎯 Hobbies &amp; sports</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar Focus — Verb + -ing after enjoy/love/like/hate</span>
+  <div class="grammar-rule">
+    <span class="rule-label">After enjoy, love, like, hate, don't mind → use VERB + -ING</span>
+    <div class="rule-text">
+      I <em>enjoy reading</em> books at night. &nbsp; She <em>loves dancing</em>. &nbsp; He <em>hates waking up</em> early.<br>
+      We <em>don't mind walking</em> to work. &nbsp; They <em>enjoy playing</em> tennis on Sundays.<br><br>
+      ⚠️ I enjoy <em>to read</em>. ✗ &nbsp; I enjoy <em>reading</em>. ✓
+    </div>
+  </div>
+  <div class="grammar-rule" style="margin-top:10px;">
+    <span class="rule-label">Spelling: verb + -ing</span>
+    <div class="rule-text" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <div>Most verbs: + <em>ing</em><br>read → read<em>ing</em><br>play → play<em>ing</em></div>
+      <div>End in -e: drop e<br>danc<em>e</em> → danc<em>ing</em><br>writ<em>e</em> → writ<em>ing</em></div>
+      <div>Short + consonant: double<br>run → run<em>ning</em><br>swim → swim<em>ming</em></div>
+    </div>
+  </div>
+</div>
+
+<div class="vocab-grid">
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">reading</div><div class="vpron">ríding</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">leer</div><div class="vexample">"I enjoy reading novels."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">cooking</div><div class="vpron">kúking</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">cocinar</div><div class="vexample">"She loves cooking Italian food."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">dancing</div><div class="vpron">dáncing</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">bailar</div><div class="vexample">"We enjoy dancing on weekends."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">swimming</div><div class="vpron">swíming</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">nadar</div><div class="vexample">"He goes swimming on Tuesdays."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">travelling</div><div class="vpron">tráveling</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">viajar</div><div class="vexample">"I love travelling to new places."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">watching films</div><div class="vpron">wóching films</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">ver películas</div><div class="vexample">"She enjoys watching thrillers."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">playing sport</div><div class="vpron">pléing sport</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">hacer deporte</div><div class="vexample">"I play football on Saturdays."</div></div></div>
+  <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-front"><div class="vword">listening to music</div><div class="vpron">lísening</div><div class="vhint">Flip!</div></div><div class="vocab-back"><div class="vtranslate">escuchar música</div><div class="vexample">"I enjoy listening to jazz."</div></div></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">25</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with the correct -ing form of the verb in brackets.</h4></div></div>
+  <label class="blank-sentence">1. She loves <input class="blank" id="h9a" data-answer="dancing" placeholder="-ing"> (dance) — she goes to salsa class every week.</label>
+  <label class="blank-sentence">2. I don't enjoy <input class="blank" id="h9b" data-answer="running" placeholder="-ing"> (run) — it's too tiring!</label>
+  <label class="blank-sentence">3. My brother enjoys <input class="blank" id="h9c" data-answer="playing" placeholder="-ing"> (play) video games in the evenings.</label>
+  <label class="blank-sentence">4. We love <input class="blank" id="h9d" data-answer="travelling" placeholder="-ing"> (travel) — we visit a new country every year.</label>
+  <label class="blank-sentence">5. He hates <input class="blank" id="h9e" data-answer="waking" placeholder="-ing"> (wake) up early on Saturdays.</label>
+  <label class="blank-sentence">6. Do you enjoy <input class="blank" id="h9f" data-answer="cooking" placeholder="-ing"> (cook) at home?</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('h9',['dancing','running','playing','travelling','waking','cooking'],6,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans_u9')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('h9',6)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans_u9"><span class="ar-label">Answers</span><li>dancing (dance → drop e → dancing)</li><li>running (run → double n → running)</li><li>playing</li><li>travelling (travel → double l in British English)</li><li>waking (wake → drop e → waking)</li><li>cooking</li></div>
+  <div class="result-banner" id="res_h9"></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">26</div><div><div class="ex-type">Writing</div><h4>Write about YOUR hobbies and free time. Use enjoy/love/like/hate + -ing!</h4></div></div>
+  <textarea class="writing-box" placeholder="In my free time, I enjoy... I also love... I don't like... My [family member/friend] loves... On weekends, we enjoy..." oninput="updateCount(this,'wc_u9');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u9">0 characters</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 10 — MY HOME
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Ten ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FEF0F6 0%,#FFFAEB 100%);border:1px solid var(--pink);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">🏠</span>
+  <span class="unit-tag" style="color:var(--pink-deep);">✦ Unit Ten ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">My Home 🏠</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Describe where you live using rooms, furniture, and the key phrases "There is / There are."</p>
+  <div class="unit-meta"><span>⏱ 40–50 min</span><span>📌 There is / There are</span><span>🎯 Describe your home</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar — There is / There are</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">THERE IS (singular)</span>
+      <div class="rule-text"><em>There is</em> a kitchen on the ground floor.<br><em>There's</em> a balcony with a great view!<br><em>There isn't</em> a garage, unfortunately.<br><br>Is there a lift? → Yes, there is.</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">THERE ARE (plural)</span>
+      <div class="rule-text"><em>There are</em> three bedrooms.<br><em>There are</em> big windows in the living room.<br><em>There aren't</em> any parking spaces.<br><br>Are there any shops near you? → Yes, there are.</div>
+    </div>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table class="ref-table">
+    <thead><tr><th>Rooms</th><th>English</th><th>Cómo suena</th></tr></thead>
+    <tbody>
+      <tr><td>living room / sala</td><td class="rword">living room / lounge</td><td class="rpron">líving rum</td></tr>
+      <tr><td>cocina</td><td class="rword">kitchen</td><td class="rpron">kíchen</td></tr>
+      <tr><td>dormitorio</td><td class="rword">bedroom</td><td class="rpron">bédrum</td></tr>
+      <tr><td>baño</td><td class="rword">bathroom</td><td class="rpron">báthrum</td></tr>
+      <tr><td>comedor</td><td class="rword">dining room</td><td class="rpron">dáining rum</td></tr>
+      <tr><td>jardín / patio</td><td class="rword">garden / patio</td><td class="rpron">gárden / páshio</td></tr>
+      <tr><td>balcón</td><td class="rword">balcony</td><td class="rpron">bálkoni</td></tr>
+      <tr><td>entrada / recibidor</td><td class="rword">hallway / entrance</td><td class="rpron">hólwei</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">27</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with There is / There are / There isn't / There aren't.</h4></div></div>
+  <label class="blank-sentence">1. <input class="blank pink" id="h10a" data-answer="There is" placeholder="..."> a big kitchen with a window that looks over the garden.</label>
+  <label class="blank-sentence">2. <input class="blank pink" id="h10b" data-answer="There are" placeholder="..."> two bathrooms — one on each floor.</label>
+  <label class="blank-sentence">3. <input class="blank pink" id="h10c" data-answer="There isn't" placeholder="..."> a garage, so we park in the street.</label>
+  <label class="blank-sentence">4. <input class="blank pink" id="h10d" data-answer="Are there" placeholder="..."> any shops near your flat?</label>
+  <label class="blank-sentence">5. <input class="blank pink" id="h10e" data-answer="There aren't" placeholder="..."> any trees in the garden — just grass.</label>
+  <label class="blank-sentence">6. <input class="blank pink" id="h10f" data-answer="Is there" placeholder="..."> a lift in the building? — Yes, there is!</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('h10',['There is','There are','There isn\'t','Are there','There aren\'t','Is there'],6,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans_u10')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('h10',6)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans_u10"><span class="ar-label">Answers</span><li>There is (singular: a big kitchen)</li><li>There are (plural: two bathrooms)</li><li>There isn't (negative singular)</li><li>Are there (question plural)</li><li>There aren't (negative plural)</li><li>Is there (question singular)</li></div>
+  <div class="result-banner" id="res_h10"></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">28</div><div><div class="ex-type">Writing Task</div><h4>Describe your home! Use "There is / There are" and rooms vocabulary.</h4></div></div>
+  <textarea class="writing-box" placeholder="I live in a [flat/house] in [place]. There are ___ bedrooms and ___ bathrooms. There is a... In the living room, there is/are... There isn't a... I love my home because..." oninput="updateCount(this,'wc_u10');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u10">0 characters</div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans_u10w')">💡 Example</button>
+  <div class="answer-reveal" id="ans_u10w"><span class="ar-label">Example</span><li>I live in a flat on the fourth floor in Palermo. There are two bedrooms and one bathroom. There is a small kitchen with a window — I love cooking there! In the living room, there is a big sofa and a TV. There isn't a garden, but there is a lovely balcony where I have my morning coffee. There are lots of plants on the balcony!</li></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 11 — JOBS & WORK
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Eleven ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#F5F4F8 0%,#F2EEFB 100%);border:1px solid var(--gray);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">💼</span>
+  <span class="unit-tag" style="color:var(--gray-dark);">✦ Unit Eleven ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Jobs &amp; Work 💼</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Talk about professions, workplaces, and what people do for a living.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 I work as / I'm a</span><span>🎯 Professions &amp; workplaces</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar — Talking About Work</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">What is your job?</span>
+      <div class="rule-text">
+        I <em>am a</em> teacher. / I<em>'m a</em> nurse.<br>
+        She <em>works as a</em> graphic designer.<br>
+        He <em>is a</em> software engineer.<br><br>
+        ⚠️ Use <em>a/an</em> before a job!<br>
+        I'm <em>a</em> teacher. ✓ (NOT: I'm teacher. ✗)
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Where do you work?</span>
+      <div class="rule-text">
+        I work <em>in</em> an office / a school / a hospital.<br>
+        She works <em>at</em> Google / the university.<br>
+        He works <em>from home</em>. (remote work)<br>
+        I'm <em>self-employed</em>. (autónomo)<br>
+        I'm <em>a freelancer</em>. (freelance)
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Working hours</span>
+      <div class="rule-text">
+        I work <em>full-time</em> / <em>part-time</em>.<br>
+        I work from 9 to 6, Monday to Friday.<br>
+        I work <em>shifts</em>. / I work <em>nights</em>.<br>
+        I start at 8am and finish at 5pm.
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Useful verbs at work</span>
+      <div class="rule-text">
+        teach / help / design / build<br>
+        manage / create / sell / drive<br>
+        look after (patients/children)<br>
+        I <em>look after</em> children in a nursery.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">29</div><div><div class="ex-type">Matching</div><h4>Match the job with what they do.</h4></div></div>
+  <div class="match-container">
+    <div>
+      <h5>Job</h5>
+      <div class="match-item" id="mj_1" onclick="doMatch(this,'left','1')">A teacher</div>
+      <div class="match-item" id="mj_2" onclick="doMatch(this,'left','2')">A doctor</div>
+      <div class="match-item" id="mj_3" onclick="doMatch(this,'left','3')">A chef</div>
+      <div class="match-item" id="mj_4" onclick="doMatch(this,'left','4')">A journalist</div>
+    </div>
+    <div>
+      <h5>What they do</h5>
+      <div class="match-item" id="mj_3" onclick="doMatch(this,'right','3')">...cooks food in a restaurant.</div>
+      <div class="match-item" id="mj_1" onclick="doMatch(this,'right','1')">...teaches students in a school.</div>
+      <div class="match-item" id="mj_4" onclick="doMatch(this,'right','4')">...writes articles for newspapers.</div>
+      <div class="match-item" id="mj_2" onclick="doMatch(this,'right','2')">...helps sick people get better.</div>
+    </div>
+  </div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans_u11')">Show Answers</button><button class="btn btn-reset" onclick="resetAllMatch()">↺ Reset</button></div>
+  <div class="answer-reveal" id="ans_u11"><span class="ar-label">Matches</span><li>A teacher → teaches students in a school.</li><li>A doctor → helps sick people get better.</li><li>A chef → cooks food in a restaurant.</li><li>A journalist → writes articles for newspapers.</li></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num gray">30</div><div><div class="ex-type">Writing</div><h4>Write a short paragraph about YOUR work or studies. Include: what you do, where, what time, what you like/don't like about it.</h4></div></div>
+  <textarea class="writing-box tall" placeholder="I work as a... / I am a... / I study at... I work/study in... I start at ___ and finish at ___. I usually... I love my job/studies because... I don't like... because..." oninput="updateCount(this,'wc_u11');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u11">0 characters</div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans_u11w')">💡 Example</button>
+  <div class="answer-reveal" id="ans_u11w"><span class="ar-label">Example</span><li>I work as a graphic designer at a small agency in Buenos Aires. I usually start at 9am and finish at 6pm, Monday to Friday. I work in an office, but sometimes I work from home on Fridays. I love my job because I'm very creative and I enjoy designing logos and websites. I don't like the commute — it takes 45 minutes every day! My team is great and my manager is very kind.</li></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 12 — NUMBERS, PRICES & SHOPPING
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Twelve ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FFFAEB 0%,#FFF3EB 100%);border:1px solid var(--yellow-mid);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">🛍️</span>
+  <span class="unit-tag" style="color:var(--yellow-dark);">✦ Unit Twelve ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Numbers &amp; Shopping 🛍️</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Numbers, prices, and essential shopping phrases for real-world situations.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 How much / How many</span><span>🎯 Shopping survival English</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar — Countable vs Uncountable</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">HOW MUCH (uncountable)</span>
+      <div class="rule-text"><em>How much</em> does it cost?<br><em>How much</em> water do you drink?<br><em>How much</em> money do you have?<br><br>→ Used with things you can't count</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">HOW MANY (countable)</span>
+      <div class="rule-text"><em>How many</em> people are there?<br><em>How many</em> cups do you drink?<br><em>How many</em> languages do you speak?<br><br>→ Used with things you can count</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Shopping phrases</span>
+      <div class="rule-text">How much <em>is</em> this? (singular)<br>How much <em>are</em> these? (plural)<br>Can I have...? / I'd like...<br>Do you have this in...?</div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Numbers to know</span>
+      <div class="rule-text">1–12: one to twelve<br>13–19: thirteen to nineteen<br>20,30,40...100: twenty, thirty...<br>1,000 = a thousand &nbsp; 1,000,000 = a million</div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">31</div><div><div class="ex-type">Multiple Choice</div><h4>Choose HOW MUCH or HOW MANY.</h4></div></div>
+  <p class="mc-q">1. ________ brothers and sisters do you have?</p>
+  <div id="mc_u12a"><div class="mc-option" onclick="doMC(this,'mc_u12a','A','B')"><div class="mc-letter">A</div>How much</div><div class="mc-option" onclick="doMC(this,'mc_u12a','B','B')"><div class="mc-letter">B</div>How many</div></div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">2. ________ does a cup of coffee cost in your city?</p>
+  <div id="mc_u12b"><div class="mc-option" onclick="doMC(this,'mc_u12b','A','A')"><div class="mc-letter">A</div>How much</div><div class="mc-option" onclick="doMC(this,'mc_u12b','B','A')"><div class="mc-letter">B</div>How many</div></div>
+  <div class="mc-sep"></div>
+  <p class="mc-q">3. ________ time do you spend on your phone every day?</p>
+  <div id="mc_u12c"><div class="mc-option" onclick="doMC(this,'mc_u12c','A','A')"><div class="mc-letter">A</div>How much</div><div class="mc-option" onclick="doMC(this,'mc_u12c','B','A')"><div class="mc-letter">B</div>How many</div></div>
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans_u12')">Show Explanations</button></div>
+  <div class="answer-reveal" id="ans_u12"><span class="ar-label">Answers</span><li>How many (brothers/sisters = countable)</li><li>How much (cost = uncountable amount)</li><li>How much (time = uncountable)</li></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num yellow">32</div><div><div class="ex-type">Speaking Cards</div><h4>Answer these number questions about your life.</h4></div></div>
+  <div class="speaking-grid">
+    <div class="speaking-card"><div class="sc-num">💰</div><p>How much do you usually spend on lunch?</p><input type="text" class="my-answer" placeholder="I usually spend about..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">👥</div><p>How many people live in your home?</p><input type="text" class="my-answer" placeholder="There are ___ people..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">📱</div><p>How many hours do you sleep every night?</p><input type="text" class="my-answer" placeholder="I usually sleep about..." oninput="trackProgress()"></div>
+    <div class="speaking-card"><div class="sc-num">☕</div><p>How many cups of coffee/tea do you drink a day?</p><input type="text" class="my-answer" placeholder="I drink about ___ cups..." oninput="trackProgress()"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 13 — PREPOSITIONS OF TIME & PLACE
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Thirteen ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#F2EEFB 0%,#FEF0F6 100%);border:1px solid var(--lila);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">📍</span>
+  <span class="unit-tag" style="color:var(--lila-deep);">✦ Unit Thirteen ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Prepositions 📍</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">At, in, on — the three most important prepositions for time and place.</p>
+  <div class="unit-meta"><span>⏱ 35–45 min</span><span>📌 at / in / on</span><span>🎯 Time &amp; Location</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar — AT / IN / ON</span>
+  <div class="grammar-grid3">
+    <div class="grammar-rule">
+      <span class="rule-label">AT — specific time/place</span>
+      <div class="rule-text">
+        <em>at</em> 7am / at midnight<br>
+        <em>at</em> the weekend (UK)<br>
+        <em>at</em> Christmas / at Easter<br>
+        <em>at</em> the bus stop<br>
+        <em>at</em> home / at work<br>
+        <em>at</em> school / at university
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">IN — months, years, places</span>
+      <div class="rule-text">
+        <em>in</em> the morning/afternoon<br>
+        <em>in</em> January / in 2020<br>
+        <em>in</em> summer / in winter<br>
+        <em>in</em> Argentina / in London<br>
+        <em>in</em> the kitchen / in the car<br>
+        <em>in</em> an office / in a hospital
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">ON — days, dates, surfaces</span>
+      <div class="rule-text">
+        <em>on</em> Monday / on Sundays<br>
+        <em>on</em> 15th March<br>
+        <em>on</em> my birthday<br>
+        <em>on</em> the table / on the wall<br>
+        <em>on</em> the first floor<br>
+        <em>on</em> the left / on the right
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">33</div><div><div class="ex-type">Fill in the blank</div><h4>Complete with at, in, or on.</h4></div></div>
+  <div class="word-bank"><span class="wb-label">Word bank:</span><span class="word-chip">at</span><span class="word-chip">in</span><span class="word-chip">on</span></div>
+  <label class="blank-sentence">1. I always wake up <input class="blank" id="p13a" data-answer="at" placeholder="..."> 7am, even on weekends.</label>
+  <label class="blank-sentence">2. She was born <input class="blank" id="p13b" data-answer="in" placeholder="..."> April, <input class="blank" id="p13c" data-answer="in" placeholder="..."> 1988.</label>
+  <label class="blank-sentence">3. We don't work <input class="blank" id="p13d" data-answer="on" placeholder="..."> Saturdays or Sundays.</label>
+  <label class="blank-sentence">4. My family lives <input class="blank" id="p13e" data-answer="in" placeholder="..."> a small town <input class="blank" id="p13f" data-answer="in" placeholder="..."> the south of Argentina.</label>
+  <label class="blank-sentence">5. Let's meet <input class="blank" id="p13g" data-answer="at" placeholder="..."> the café <input class="blank" id="p13h" data-answer="on" placeholder="..."> Friday morning.</label>
+  <label class="blank-sentence">6. My keys are <input class="blank" id="p13i" data-answer="on" placeholder="..."> the table — I can see them!</label>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('p13',['at','in','in','on','in','in','at','on','on'],9,this)">✓ Check</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans_u13')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('p13',9)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans_u13"><span class="ar-label">Answers</span><li>at (specific time → at)</li><li>in April / in 1988 (month + year → in)</li><li>on Saturdays (days → on)</li><li>in a small town / in the south (place/region → in)</li><li>at the café (specific place → at) / on Friday (day → on)</li><li>on the table (surface → on)</li></div>
+  <div class="result-banner" id="res_p13"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 14 — HEALTH & FEELINGS
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Fourteen ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#FEF0F6 0%,#F2EEFB 100%);border:1px solid var(--pink);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">💊</span>
+  <span class="unit-tag" style="color:var(--pink-deep);">✦ Unit Fourteen ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Health &amp; Feelings 💊</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">Talk about how you feel, what hurts, and how you look after your health — all in Present Simple.</p>
+  <div class="unit-meta"><span>⏱ 35–40 min</span><span>📌 feel / have / ache</span><span>🎯 Describe health &amp; feelings</span></div>
+</div>
+
+<div class="grammar-box">
+  <span class="grammar-tag">📖 Grammar — Talking About Health</span>
+  <div class="grammar-grid">
+    <div class="grammar-rule">
+      <span class="rule-label">I feel / I have / It hurts</span>
+      <div class="rule-text">
+        I <em>feel</em> tired / sick / great / better.<br>
+        I <em>have</em> a headache / cold / fever.<br>
+        My head / back / stomach <em>hurts</em>.<br>
+        I <em>ache</em> all over — I think I'm ill.<br>
+        She <em>doesn't feel</em> well today.
+      </div>
+    </div>
+    <div class="grammar-rule">
+      <span class="rule-label">Good health habits (Present Simple)</span>
+      <div class="rule-text">
+        I <em>exercise</em> three times a week.<br>
+        She <em>drinks</em> a lot of water every day.<br>
+        He <em>doesn't smoke</em>.<br>
+        I <em>sleep</em> 8 hours a night.<br>
+        We <em>eat</em> vegetables every day.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">34</div><div><div class="ex-type">Choose Your Answer</div><h4>What do you say in each situation? Choose the best response and say it out loud!</h4></div></div>
+  <div class="check-q">😷 You don't feel well today. How do you tell someone?</div>
+  <div class="check-opts">
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I feel sick today — I think I have a cold.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I don't feel good. I have a headache and a sore throat.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I'm not well. I think I need to rest today.</div>
+  </div>
+  <div class="check-q">🏃 Someone asks about your health habits. You answer:</div>
+  <div class="check-opts">
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I exercise three times a week and I always drink a lot of water.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I don't exercise much, but I try to eat healthy food.</div>
+    <div class="check-opt" onclick="selOpt(this)"><div class="check-box"></div>I walk everywhere — I don't have a car, so that helps!</div>
+  </div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num pink">35</div><div><div class="ex-type">Writing</div><h4>Write about YOUR health habits. What do you do (or not do) to stay healthy?</h4></div></div>
+  <textarea class="writing-box" placeholder="I usually... / I never... / I always try to... / I drink... cups of water every day. / I exercise... / I don't... / My biggest health problem is... / I feel best when I..." oninput="updateCount(this,'wc_u14');trackProgress()"></textarea>
+  <div class="char-count" id="wc_u14">0 characters</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIT 15 — FINAL REVIEW: ALL TENSES TOGETHER
+══════════════════════════════════════ -->
+<div class="unit-divider"><span>✦ Unit Fifteen ✦</span></div>
+<div class="unit-header" style="background:linear-gradient(135deg,#F2EEFB 0%,#FEF0F6 60%,#FFFAEB 100%);border:1px solid var(--lila);margin-bottom:28px;border-radius:24px;padding:36px 36px 28px;position:relative;overflow:hidden;">
+  <span style="position:absolute;bottom:14px;right:22px;font-size:52px;opacity:.12;">🏆</span>
+  <span class="unit-tag" style="color:var(--lila-deep);">✦ Unit Fifteen ✦</span>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:var(--text);margin-bottom:8px;">Grand Final Review 🏆</h2>
+  <p style="font-size:14px;color:var(--text-mid);max-width:500px;">A complete review of everything you've learned — all Present Simple forms in one big challenge!</p>
+  <div class="unit-meta"><span>⏱ 50–60 min</span><span>📌 Everything!</span><span>🎯 Master the Present Simple</span></div>
+</div>
+
+<div class="callout callout-lila"><span class="callout-emoji">💜</span><div><strong>You made it to Unit 15!</strong><p>This final unit brings together EVERYTHING: BE, affirmative, negative, questions, frequency, have, there is/are, prepositions, hobbies, family, food, jobs, and health. Let's see how much you know!</p></div></div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">36</div><div><div class="ex-type">Mixed Fill in the blank</div><h4>Complete this paragraph with the correct forms. All Present Simple!</h4></div></div>
+  <p style="font-size:14px;color:var(--text-mid);margin-bottom:16px;line-height:1.7;">Read about Valentina and complete the gaps with the right word.</p>
+  <div style="background:var(--gray-pale);border-radius:16px;padding:20px 22px;font-size:15px;line-height:3;">
+    My name <input class="blank" id="fr1" data-answer="is" placeholder="be"> Valentina and I <input class="blank" id="fr2" data-answer="am" placeholder="be"> 32 years old. I <input class="blank" id="fr3" data-answer="live" placeholder="verb"> in Rosario with my husband and our two cats. I <input class="blank" id="fr4" data-answer="work" placeholder="verb"> as a primary school teacher — I love my job! My husband <input class="blank" id="fr5" data-answer="is" placeholder="be"> an architect. He <input class="blank" id="fr6" data-answer="doesn't work" placeholder="neg verb"> in an office — he <input class="blank" id="fr7" data-answer="works" placeholder="verb"> from home. There <input class="blank" id="fr8" data-answer="are" placeholder="is/are"> three rooms in our flat and there <input class="blank" id="fr9" data-answer="is" placeholder="is/are"> a lovely garden. We <input class="blank" id="fr10" data-answer="don't have" placeholder="neg verb"> a car. On weekends, we <input class="blank" id="fr11" data-answer="usually go" placeholder="frequency+verb"> for long walks or we <input class="blank" id="fr12" data-answer="cook" placeholder="verb"> together. I <input class="blank" id="fr13" data-answer="love" placeholder="verb"> cooking Italian food!
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-check" onclick="checkBlanks('fr',['is','am','live','work','is','doesn\'t work','works','are','is','don\'t have','usually go','cook','love'],13,this)">✓ Check All</button>
+    <button class="btn btn-show" onclick="toggleAnswer('ans_fr')">Show Answers</button>
+    <button class="btn btn-reset" onclick="resetBlanks2('fr',13)">↺ Reset</button>
+  </div>
+  <div class="answer-reveal" id="ans_fr"><span class="ar-label">Answers</span><li>is / am / live / work / is / doesn't work / works / are / is / don't have / usually go / cook / love</li></div>
+  <div class="result-banner" id="res_fr"></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">37</div><div><div class="ex-type">Error Hunt</div><h4>Find and fix the mistakes. Each sentence has exactly ONE error.</h4></div></div>
+  <div class="error-box">1. My brother <span class="err">don't speaks</span> English very well.</div>
+  <input class="correction-input" placeholder="My brother..." id="eh1">
+  <div class="error-box">2. She <span class="err">is work</span> in a hospital in the city centre.</div>
+  <input class="correction-input" placeholder="She works..." id="eh2">
+  <div class="error-box">3. There <span class="err">is</span> many restaurants in our neighbourhood.</div>
+  <input class="correction-input" placeholder="There are..." id="eh3">
+  <div class="error-box">4. I enjoy <span class="err">to swim</span> in the pool on Sundays.</div>
+  <input class="correction-input" placeholder="I enjoy swimming..." id="eh4">
+  <div class="error-box">5. We are always <span class="err">have</span> dinner together as a family.</div>
+  <input class="correction-input" placeholder="We always have..." id="eh5">
+  <div class="btn-row"><button class="btn btn-show" onclick="toggleAnswer('ans_eh')">Show Correct Versions</button></div>
+  <div class="answer-reveal" id="ans_eh"><span class="ar-label">Corrected</span><li>My brother <strong>doesn't speak</strong> English very well. (doesn't + base verb, no -s)</li><li>She <strong>works</strong> in a hospital. (no "is" — not continuous tense)</li><li>There <strong>are</strong> many restaurants. (many = plural → there are)</li><li>I enjoy <strong>swimming</strong>. (enjoy + -ing, not infinitive)</li><li>We <strong>always have</strong> dinner. (no "are" — not continuous; frequency adverb before verb)</li></div>
+</div>
+
+<div class="exercise">
+  <div class="exercise-header"><div class="ex-num lila">38</div><div><div class="ex-type">🏆 Final Writing Challenge</div><h4>Write a complete self-portrait in English (100–150 words). Show EVERYTHING you know!</h4></div></div>
+  <div class="callout callout-lila"><span class="callout-emoji">✍️</span><div><strong>Include at least:</strong><p>✦ Who you are (BE) &nbsp; ✦ Your family (have) &nbsp; ✦ Your job/studies &nbsp; ✦ Your home (there is/are) &nbsp; ✦ Your hobbies (enjoy + -ing) &nbsp; ✦ Your food preferences &nbsp; ✦ Your health habits &nbsp; ✦ Frequency adverbs (always/usually/sometimes/never) &nbsp; ✦ One negative sentence &nbsp; ✦ One question you like to ask other people</p></div></div>
+  <textarea class="writing-box tall" id="wf_final" placeholder="My name is... I am... years old and I live in... I work as a / I study... I have... There is/are... in my home. In my free time, I enjoy... I love eating... but I don't like... I always/usually/never... My biggest dream is..." oninput="updateCount(this,'wc_final');trackProgress()"></textarea>
+  <div class="char-count" id="wc_final">0 characters (aim for 100–150 words)</div>
+  <button class="btn btn-lila" onclick="toggleAnswer('ans_final')">💡 See example</button>
+  <div class="answer-reveal" id="ans_final"><span class="ar-label">Example (A1 — all structures used!)</span><li><em>"My name is Sofia and I am 30 years old. I live in Mendoza with my partner and our dog, Milo. I work as a nutritionist in a private clinic. I love my job because I help people eat better! There are two bedrooms in our flat and there is a beautiful garden. In my free time, I enjoy cooking, reading, and going for walks. I love Italian food, but I don't like spicy food at all. I usually exercise twice a week and I always drink a lot of water. I never skip breakfast — it's the most important meal of the day! A question I love asking people: How often do you cook at home?"</em></li></div>
+</div>
+
+
+<div class="unit-divider"><span>✦ Well done! ✦</span></div>
+
+<div class="reflect-box">
+  <h3>Present Simple — What I can do now 🌟</h3>
+  <p class="reflect-rs">Click each item to tick it off. Be honest with yourself!</p>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I can use AM / IS / ARE correctly in sentences.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I can conjugate regular verbs and add -s/-es/-ies for he/she/it.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I know when to use DON'T and when to use DOESN'T.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I can form yes/no questions with DO and DOES.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I know question words: what, where, when, who, why, how.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I can use adverbs of frequency: always, usually, sometimes, never.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I can write a paragraph about my daily routine in English.</div>
+  <div class="reflect-item" onclick="tickReflect(this)"><span>☐</span> I feel more confident speaking about my life in English! 💜</div>
+  <textarea class="reflect-write" placeholder="📝 Write one thing you're proud of from today, and one thing you want to practise more..." oninput="trackProgress()"></textarea>
+</div>
+
+<div class="score-card">
+  <h3>Your Session Score 🏆</h3>
+  <p>Based on exercises you checked and items you completed</p>
+  <div class="score-display" id="finalScore">—<span style="font-size:16px"> pts</span></div>
+  <div style="margin-top:16px;"><button class="btn btn-lila" onclick="showFinalScore()">Calculate my score ✨</button></div>
+</div>
+
+<div style="text-align:center;padding:28px 0 0;">
+  <p style="font-family:'Caveat',cursive;font-size:28px;color:var(--lila-deep);">You're doing amazing. Keep going! 💜</p>
+  <p style="font-size:13px;color:var(--gray);margin-top:8px;">My English Journey — A1 Present Simple Workbook</p>
+</div>
+
+</div><!-- end container -->
+
+<script>
+let score=0;
+function addScore(n){score+=n;document.getElementById('scoreDisplay').textContent=score;}
+
+// PROGRESS
+function trackProgress(){
+  const all=[...document.querySelectorAll('input[type="text"], textarea, .my-answer')];
+  const filled=all.filter(i=>i.value&&i.value.trim().length>0).length;
+  const pct=all.length>0?Math.round((filled/all.length)*100):0;
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressText').textContent=pct+'% complete';
+}
+function updateCount(el,id){
+  const w=el.value.trim().split(/\s+/).filter(x=>x).length;
+  document.getElementById(id).textContent=el.value.length+' chars / ~'+w+' words';
+  trackProgress();
+}
+
+// FILL BLANKS
+function checkBlanks(prefix,answers,count,btn){
+  let ok=0;
+  const letters='abcdefghijklmnopqrstuvwxyz';
+  answers.forEach((ans,i)=>{
+    const el=document.getElementById(prefix+letters[i]);
+    if(!el)return;
+    const val=el.value.trim().toLowerCase().replace(/\s+/g,' ');
+    const exp=ans.toLowerCase();
+    if(val===exp){el.classList.add('correct');el.classList.remove('wrong');ok++;}
+    else{el.classList.add('wrong');el.classList.remove('correct');}
+  });
+  const pct=Math.round((ok/answers.length)*100);
+  const r=document.getElementById('res_'+prefix);
+  if(r){
+    r.className='result-banner show '+(pct===100?'result-good':pct>=60?'result-ok':'result-bad');
+    r.textContent=pct===100?'✓ Perfect! All '+answers.length+' correct! +10 pts 🎉':'You got '+ok+'/'+answers.length+' correct. Review the highlighted ones.';
+    if(pct===100)addScore(10);
+    else if(pct>=60)addScore(5);
+  }
+  trackProgress();
+}
+function resetBlanks2(prefix,count){
+  const letters='abcdefghijklmnopqrstuvwxyz';
+  for(let i=0;i<count;i++){
+    const el=document.getElementById(prefix+letters[i]);
+    if(el){el.value='';el.classList.remove('correct','wrong');}
+  }
+  const r=document.getElementById('res_'+prefix);
+  if(r)r.className='result-banner';
+}
+
+// SHOW/HIDE
+function toggleAnswer(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.toggle('show');
+}
+
+// MULTIPLE CHOICE
+function doMC(el,group,chosen,correct){
+  const opts=document.querySelectorAll('#'+group+' .mc-option');
+  if(opts[0].dataset.done)return;
+  opts.forEach(o=>{o.classList.remove('selected','correct-ans','wrong-ans');});
+  el.classList.add('selected');
+  if(chosen===correct){el.classList.add('correct-ans');addScore(4);}
+  else{el.classList.add('wrong-ans');opts.forEach(o=>{if(o.querySelector('.mc-letter').textContent===correct)o.classList.add('correct-ans');});}
+  opts.forEach(o=>o.dataset.done='1');
+  trackProgress();
+}
+
+// TRUE/FALSE
+function doTF(btn,correct){
+  const item=btn.closest('.tf-item');
+  if(item.dataset.done)return;
+  const btns=item.querySelectorAll('.tf-btn');
+  btns.forEach(b=>b.classList.remove('correct','wrong'));
+  const chosen=btn.textContent;
+  if(chosen===correct){btn.classList.add('correct');addScore(3);}
+  else{btn.classList.add('wrong');btns.forEach(b=>{if(b.textContent===correct)b.classList.add('correct');});}
+  item.dataset.done='1';
+  trackProgress();
+}
+
+// VOCAB FLIP
+function flipCard(c){c.classList.toggle('flipped');addScore(1);trackProgress();}
+
+// MATCHING
+let mLeft=null,mRight=null;
+function doMatch(el,side,id){
+  if(el.classList.contains('matched'))return;
+  if(side==='left'){if(mLeft)mLeft.classList.remove('selected');mLeft=el;el.classList.add('selected');}
+  else{if(mRight)mRight.classList.remove('selected');mRight=el;el.classList.add('selected');}
+  if(mLeft&&mRight){
+    const lid=mLeft.id.split('_')[1];
+    const rid=mRight.id.split('_')[1];
+    if(lid===rid){
+      mLeft.classList.replace('selected','matched');
+      mRight.classList.replace('selected','matched');
+      addScore(4);
+    }else{
+      mLeft.classList.add('wrong-match');mRight.classList.add('wrong-match');
+      const l=mLeft,r=mRight;
+      setTimeout(()=>{l.classList.remove('selected','wrong-match');r.classList.remove('selected','wrong-match');},700);
+    }
+    mLeft=null;mRight=null;
+  }
+  trackProgress();
+}
+function resetAllMatch(){
+  mLeft=null;mRight=null;
+  document.querySelectorAll('.match-item').forEach(el=>el.classList.remove('matched','selected','wrong-match'));
+}
+
+// REORDER
+function mw(el,fromId,toId){
+  if(el.dataset.placed)return;
+  const to=document.getElementById(toId);
+  const clone=el.cloneNode(true);
+  clone.className='word-tile tile-placed';
+  clone.dataset.srcId=fromId;
+  clone.dataset.srcEl=el.dataset.id||el.textContent;
+  clone.onclick=function(){
+    el.style.opacity='1';el.style.pointerEvents='auto';delete el.dataset.placed;
+    clone.remove();trackProgress();
+  };
+  to.appendChild(clone);
+  el.style.opacity='.3';el.style.pointerEvents='none';el.dataset.placed='1';
+  trackProgress();
+}
+function checkRO(resultId,correct,btn,resId){
+  const tiles=[...document.querySelectorAll('#'+resultId+' .word-tile')];
+  const sentence=tiles.map(t=>t.textContent.trim()).join(' ');
+  const res=document.getElementById(resId);
+  if(sentence.toLowerCase()===correct.toLowerCase()){
+    res.className='result-banner show result-good';
+    res.textContent='✓ Perfect! "'+correct+'" +5 pts 🎉';
+    addScore(5);
+  }else{
+    res.className='result-banner show result-bad';
+    res.textContent='Not quite. Expected: "'+correct+'" — try again!';
+  }
+  trackProgress();
+}
+function resetRO(srcId,resId,banId){
+  document.getElementById(resId).innerHTML='';
+  document.querySelectorAll('#'+srcId+' .word-tile').forEach(t=>{t.style.opacity='1';t.style.pointerEvents='auto';delete t.dataset.placed;});
+  const r=document.getElementById(banId);
+  if(r)r.className='result-banner';
+}
+
+// CHECK OPT
+function selOpt(el){
+  const parent=el.closest('.check-opts');
+  parent.querySelectorAll('.check-opt').forEach(o=>{o.classList.remove('selected');o.querySelector('.check-box').textContent='';});
+  el.classList.add('selected');
+  el.querySelector('.check-box').textContent='✓';
+  addScore(1);
+  trackProgress();
+}
+
+// REFLECT
+function tickReflect(el){
+  const s=el.querySelector('span');
+  if(s.textContent==='☐'){s.textContent='✓';el.style.background='rgba(255,255,255,.28)';addScore(2);}
+  else{s.textContent='☐';el.style.background='';}
+  trackProgress();
+}
+
+// FINAL SCORE
+function showFinalScore(){
+  const el=document.getElementById('finalScore');
+  el.innerHTML=score+'<span> pts</span>';
+  const msg=score>=80?'Incredible work! You really know your Present Simple! 🏆':
+             score>=55?'Great effort! You have a solid foundation. Keep practising! 💜':
+             score>=30?'Good start! Review the grammar notes and try again. 🌸':
+             'Every attempt counts! Go through the exercises again — you\'ll improve! 💛';
+  const div=document.createElement('div');
+  div.className='callout callout-lila';div.style='margin-top:16px;';
+  div.innerHTML='<span style="font-size:22px">🌟</span><div><strong>'+msg+'</strong></div>';
+  document.querySelector('.score-card').appendChild(div);
+}
+
+window.addEventListener('load',trackProgress);
+</script>
+</body>
+</html>
